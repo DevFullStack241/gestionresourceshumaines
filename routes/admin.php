@@ -20,6 +20,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function(){
         Route::view('/dashboard' , 'backend.pages.admin.dashboard')->name('dashboard');
         Route::post('/logout_handler', [AdminController::class, 'logoutHandler'])->name('logout_handler');
+        Route::get('/profile', [AdminController::class, 'profileView'])->name('profile');
     });
 
 

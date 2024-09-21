@@ -44,6 +44,9 @@
 			href="{{ asset('assets/vendors/styles/') }}"
 		/>
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/admin1.css') }}" />
+
+        <link rel="stylesheet" href="{{ asset('extra-assets/ijabo/ijabo.min.css') }}">
+        @livewireStyles
         @stack('stylesheet')
 	</head>
 	<body class="login-page">
@@ -78,8 +81,20 @@
             });
         }
         </script>
-
-
+        <script src="{{ asset('extra-assets/ijabo/ijabo.min.js') }}"></script>
+        <script src="{{ asset('extra-assets/ijabo/jquery-ui.min.js') }}"></script>
+        <script>
+            window.addEventListener('showToastr', function(event){
+                        toastr.remove();
+                        if( event.detail[0].type === 'info' ){ toastr.info(event.detail[0].message); }
+                        else if( event.detail[0].type === 'success' ){ toastr.success(event.detail[0].message); }
+                        else if( event.detail[0].type === 'error' ){ toastr.error(event.detail[0].message); }
+                        else if( event.detail[0].type === 'warning' ){ toastr.warning(event.detail[0].message); }
+                        else{ return false; }
+                    });
+        </script>
+        @livewireScripts
 		@stack('scripts')
+
 	</body>
 </html>
