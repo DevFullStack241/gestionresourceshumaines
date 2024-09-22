@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/admin1.css') }}" />
 
     <link rel="stylesheet" href="{{ asset('extra-assets/ijabo/ijabo.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('extra-assets/ijaboCropTool/ijaboCropTool.min.css') }}">
 
     @livewireStyles
     @stack('stylesheet')
@@ -99,6 +100,7 @@
     </script>
     <script src="{{ asset('extra-assets/ijabo/ijabo.min.js') }}"></script>
     <script src="{{ asset('extra-assets/ijabo/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('extra-assets/ijaboCropTool/ijaboCropTool.min.js') }}"></script>
     <script>
         window.addEventListener('showToastr', function(event){
                     toastr.remove();

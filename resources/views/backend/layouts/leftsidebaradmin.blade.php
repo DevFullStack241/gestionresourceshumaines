@@ -15,8 +15,12 @@
     <div class="menu-block customscroll">
         <div class="sidebar-menu">
             <ul id="accordion-menu">
+
+                @if ( Route::is('admin.*') )
+
+
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('admin.dashboard') }}" class="dropdown-toggle no-arrow {{ Route::is('admin.dashboard') ? 'active' : '' }}">
                         <span class="micon bi bi-house"></span
                         ><span class="mtext">Dashboard</span>
                     </a>
@@ -36,6 +40,11 @@
                         <li><a href="form-pickers.html">Form Pickers</a></li>
                         <li><a href="image-cropper.html">Image Cropper</a></li>
                         <li><a href="image-dropzone.html">Image Dropzone</a></li>
+
+                        @endif
+
+
+
                     </ul>
                 </li>
                 <li>
