@@ -28,6 +28,7 @@ class Responsable extends Authenticatable
         'address',
         'phone',
         'email_verified_at',
+        'verified',
         'status'
     ];
 

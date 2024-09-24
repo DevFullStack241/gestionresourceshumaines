@@ -17,20 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
-Route::get('/agent_login', function () {
-    return view('agent_login');
-});
-
-
-Route::get('/admin_login', function () {
-    return view('admin_login');
-});
-
-
-Route::get('/responsable_login', function () {
-    return view('responsable_login');
-});
