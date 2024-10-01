@@ -32,6 +32,11 @@ class Responsable extends Authenticatable
         'status'
     ];
 
+    public function missions()
+    {
+        return $this->hasMany(Mission::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -49,5 +54,14 @@ class Responsable extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
+
+    public function getPictureAttribute($value){
+        if( $value ){
+            return asset('/images/users/respondables/'.$value);
+        }else{
+            return asset('/images/users/default-avatar.png');
+        }
+    }
 }

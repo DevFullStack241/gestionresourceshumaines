@@ -35,3 +35,24 @@ if( !function_exists('sendEmail') ){
         }
     }
 }
+
+/** GET GENERAL SETTINGS */
+if( !function_exists('get_settings') ){
+    function get_settings(){
+        $results = null;
+        $settings = new GeneralSetting();
+        $settings_data = $settings->first();
+
+        if( $settings_data ){
+            $results = $settings_data;
+        }else{
+            $settings->insert([
+                'site_name'=>'Planfy',
+                'site_email'=>'info@planify.test'
+            ]);
+            $new_settings_data = $settings->first();
+            $results = $new_settings_data;
+        }
+        return $results;
+    }
+}

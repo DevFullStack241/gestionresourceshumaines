@@ -7,6 +7,7 @@
 		<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
 
 		<!-- Site favicon -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"
@@ -44,6 +45,8 @@
 			href="{{ asset('assets/vendors/styles/icon-font.min.css') }}"
 		/>
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/style.css') }}" />
+        @kropifyStyles
+        @livewireStyles
         @stack('stylesheet')
 	</head>
 	<body>
@@ -60,7 +63,7 @@
 			</div>
 		</div> --}}
 
-		@include('backend.layouts.header')
+		@include('backend.layouts.headeradmin')
 
 		@include('backend.layouts.rightsidebar')
 
@@ -105,15 +108,8 @@
 		<script src="{{ asset('assets/vendors/scripts/script.min.js') }}"></script>
 		<script src="{{ asset('assets/vendors/scripts/process.js') }}"></script>
 		<script src="{{ asset('assets/vendors/scripts/layout-settings.js') }}"></script>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+        @kropifyScripts
+        @livewireScripts
+        @stack('scripts')
 	</body>
 </html>

@@ -19,9 +19,9 @@ class Authenticate extends Middleware
                 return route('admin.login');
             }
 
-            if ($request->routeIs('seller.*')) {
+            if ($request->routeIs('responsable.*')) {
                 session()->flash('fail', 'Vous devez d\'abord vous connecter');
-                return route('seller.login');
+                return route('responsable.login');
             }
 
             // Retour par défaut pour les autres utilisateurs

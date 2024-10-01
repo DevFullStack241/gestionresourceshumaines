@@ -4,7 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Admin;
-// use App\Models\Responsable;
+use App\Models\Responsable;
 use Illuminate\Support\Facades\Auth;
 
 class AdminResponsableHeaderProfileInfo extends Component
@@ -21,9 +21,9 @@ class AdminResponsableHeaderProfileInfo extends Component
         if( Auth::guard('admin')->check() ){
             $this->admin = Admin::findOrFail(auth()->id());
         }
-        // if( Auth::guard('responsable')->check() ){
-        //     $this->responsable = Responsable::findOrFail(auth()->id());
-        // }
+        if( Auth::guard('responsable')->check() ){
+            $this->responsable = Responsable::findOrFail(auth()->id());
+        }
     }
 
     public function render()

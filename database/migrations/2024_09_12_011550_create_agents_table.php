@@ -22,7 +22,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('registration_number')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('status',['En attente','Active'])->default('En attente');
+            $table->enum('status',['actif','inactif'])->default('actif');
+            $table->enum('disponibilite', ['disponible', 'occupé'])->default('disponible');
             $table->timestamps();
         });
     }

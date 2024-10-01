@@ -27,10 +27,22 @@ class Agent extends Authenticatable
         'picture',
         'address',
         'phone',
-        'registration_number',
+        'statut',
+        'register_number',
+        'disponibilite',
         'email_verified_at',
-        'status'
+
     ];
+
+    public function disponibilites()
+    {
+        return $this->hasMany(Disponibilite::class);
+    }
+
+    public function affectations()
+    {
+        return $this->hasMany(Affectation::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

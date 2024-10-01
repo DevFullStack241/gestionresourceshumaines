@@ -16,7 +16,7 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('responsable.home') }}" class="dropdown-toggle no-arrow" {{ Route::is('responsable.home') ? 'active' : '' }}>
                         <span class="micon bi bi-house"></span
                         ><span class="mtext">Dashboard</span>
                     </a>

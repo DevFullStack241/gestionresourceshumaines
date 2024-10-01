@@ -1,4 +1,4 @@
-@extends('backend.layouts.auth')
+@extends('backend.layouts.responsable_auth')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Reset Password')
 @section('content')
 
@@ -32,10 +32,7 @@
         <div class="row align-items-center">
             <div class="col-5">
                 <div class="input-group mb-0">
-
                     <input class="btn btn-primary btn-lg btn-block" type="submit" value="Submit">
-
-
                 </div>
             </div>
         </div>

@@ -35,12 +35,19 @@
             </div>
             <div class="login-menu">
                 <ul>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="{{ route('responsable.register') }}">Register</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    @yield('content')
+    <div
+			class="login-wrap d-flex align-items-center flex-wrap justify-content-center"
+		>
+			<div class="container">
+				@yield('content')
+			</div>
+		</div>
+
     <!-- js -->
     <script src="{{ asset('assets/vendors/scripts/core.js') }}"></script>
     <script src="{{ asset('assets/vendors/scripts/script.min.js') }}"></script>
