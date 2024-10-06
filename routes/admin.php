@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\CalendarController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 
@@ -22,7 +23,17 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/logout_handler', [AdminController::class, 'logoutHandler'])->name('logout_handler');
         Route::get('/profile', [AdminController::class, 'profileView'])->name('profile');
         Route::post('/change-profile-picture', [AdminController::class, 'changeProfilePicture'])->name('change-profile-picture');
+
+
+
+        //CATEGORIES AND SUB CATEGORIES MANAGEMENT
+        Route::prefix('calendar')->name('calendar.')->group(function () {
+            Route::controller(CalendarController::class)->group(function () {
+                Route::get('/calendar', 'A')->name('cats-subcats-list');
+            });
+        });
     });
+
 
 
 

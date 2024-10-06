@@ -6,12 +6,12 @@
                 <li class="nav-item">
                     <a wire:click.prevent='selectTab("personal_details")'
                         class="nav-link {{ $tab == 'personal_details' ? 'active' : '' }}" data-toggle="tab"
-                        href="#personal_details" role="tab">Personal details</a>
+                        href="#personal_details" role="tab">Données personnelles</a>
                 </li>
                 <li class="nav-item">
                     <a wire:click.prevent='selectTab("update_password")'
                         class="nav-link {{ $tab == 'update_password' ? 'active' : '' }}" data-toggle="tab"
-                        href="#update_password" role="tab">Update password</a>
+                        href="#update_password" role="tab">Mettre à jour le mot de passe</a>
                 </li>
             </ul>
             <div class="tab-content">
@@ -23,7 +23,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Name</label>
+                                        <label for="">Nom</label>
                                         <input type="text" class="form-control" wire:model.live='name'
                                             placeholder="Enter full name">
                                         @error('name')
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Username</label>
+                                        <label for="">Nom d'utilisateur</label>
                                         <input type="text" class="form-control" wire:model.live='username'
                                             placeholder="Enter username">
                                         @error('username')
@@ -52,7 +52,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="submit" class="btn btn-primary">Enregistrer</button>
                         </form>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Current password</label>
-                                        <input type="password" placeholder="Enter current password"
+                                        <label for="">Mot de passe actuel</label>
+                                        <input type="password" placeholder="Mot de passe actuel"
                                             wire:model='current_password' class="form-control">
                                         @error('current_password')
                                         <span class="text-danger">{{ $message }}</span>
@@ -75,8 +75,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">New password</label>
-                                        <input type="password" placeholder="Enter new password"
+                                        <label for="">Nouveau mot de passe</label>
+                                        <input type="password" placeholder="Nouveau mot de passe"
                                             wire:model='new_password' class="form-control">
                                         @error('new_password')
                                         <span class="text-danger">{{ $message }}</span>
@@ -85,8 +85,8 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="">Confirm new password</label>
-                                        <input type="password" placeholder="Retype new password"
+                                        <label for="">Confirmer le mot de passe</label>
+                                        <input type="password" placeholder="Tapez le nouveau mot de passe"
                                             wire:model='new_password_confirmation' class="form-control">
                                         @error('new_password_confirmation')
                                         <span class="text-danger">{{ $message }}</span>
@@ -94,7 +94,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Update password</button>
+                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
                         </form>
                     </div>
                 </div>

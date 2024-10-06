@@ -34,16 +34,6 @@ class Agent extends Authenticatable
 
     ];
 
-    public function disponibilites()
-    {
-        return $this->hasMany(Disponibilite::class);
-    }
-
-    public function affectations()
-    {
-        return $this->hasMany(Affectation::class);
-    }
-
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -62,4 +52,16 @@ class Agent extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //relattion
+
+    public function affectations()
+    {
+        return $this->hasMany(Affectation::class);
+    }
+
+    public function disponibilites()
+    {
+        return $this->hasMany(Disponibilite::class);
+    }
 }

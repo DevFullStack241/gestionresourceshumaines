@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Chat extends Model
+class QuartTravail extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'mission_id',
-        'title',
-        'creation_date',
+        'affectation_id',
+        'start_time',
+        'end_time',
+        'work_hours',
     ];
 
     // Relations
-    public function missions()
+    public function affectation()
     {
-        return $this->belongsTo(Mission::class);
+        return $this->belongsTo(Affectation::class);
     }
 }

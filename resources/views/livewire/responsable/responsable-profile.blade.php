@@ -26,12 +26,12 @@
                             <li class="nav-item">
                                 <a wire:click.prevent='selectTab("personal_details")'
                                     class="nav-link {{ $tab == 'personal_details' ? 'active' : '' }}" data-toggle="tab"
-                                    href="#personal_details" role="tab">Personal Details</a>
+                                    href="#personal_details" role="tab">Détails personnels</a>
                             </li>
                             <li class="nav-item">
                                 <a wire:click.prevent='selectTab("update_password")'
                                     class="nav-link {{ $tab == 'update_password' ? 'active' : '' }}" data-toggle="tab"
-                                    href="#update_password" role="tab">Update Password</a>
+                                    href="#update_password" role="tab">Mettre à jour le mot de passe</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -43,9 +43,9 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Full name</label>
+                                                    <label for="">Nom et prénom</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Enter full name" wire:model.live='name'>
+                                                        placeholder="Entrez le nom complet" wire:model.live='name'>
                                                     @error('name')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -54,7 +54,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="">Email</label>
-                                                    <input type="text" class="form-control" placeholder="Enter email"
+                                                    <input type="text" class="form-control" placeholder="Entrez l'email"
                                                         wire:model.live='email' disabled>
                                                     @error('email')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -63,8 +63,8 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Username</label>
-                                                    <input type="text" class="form-control" placeholder="Enter username"
+                                                    <label for="">Nom d'utilisateur</label>
+                                                    <input type="text" class="form-control" placeholder="Entrez le nom d'utilisateur"
                                                         wire:model.live='username'>
                                                     @error('username')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -73,9 +73,9 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="">Phone</label>
+                                                    <label for="">Téléphone</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Enter phone number" wire:model.live='phone'>
+                                                        placeholder="Entrez le numéro de téléphone" wire:model.live='phone'>
                                                     @error('phone')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -83,8 +83,8 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="">Address</label>
-                                                    <input type="text" class="form-control" placeholder="Enter address"
+                                                    <label for="">Adresse</label>
+                                                    <input type="text" class="form-control" placeholder="Entrez l'adresse"
                                                         wire:model.live='address'>
                                                     @error('address')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -92,7 +92,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                        <button type="submit" class="btn btn-primary">Enregistrer</button>
                                     </form>
                                 </div>
                             </div>
@@ -105,9 +105,9 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Current password</label>
+                                                    <label for="">Mot de passe actuel</label>
                                                     <input type="password" class="form-control"
-                                                        placeholder="Enter current password"
+                                                        placeholder="Entrez le mot de passe actuel"
                                                         wire:model='current_password'>
                                                     @error('current_password')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -116,9 +116,9 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">New password</label>
+                                                    <label for="">Nouveau mot de passe</label>
                                                     <input type="password" class="form-control"
-                                                        placeholder="Enter new password" wire:model='new_password'>
+                                                        placeholder="Entrez un nouveau mot de passe" wire:model='new_password'>
                                                     @error('new_password')
                                                     <span class="text-danger">{{ $message }}</span>
                                                     @enderror
@@ -126,9 +126,9 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Confirm new password</label>
+                                                    <label for="">Confirmer le nouveau mot de passe</label>
                                                     <input type="password" class="form-control"
-                                                        placeholder="Retype new password"
+                                                        placeholder="Retapez le nouveau mot de passe"
                                                         wire:model='new_password_confirmation'>
                                                     @error('new_password_confirmation')
                                                     <span class="text-danger">{{ $message }}</span>
@@ -136,7 +136,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Update password</button>
+                                        <button type="submit" class="btn btn-primary">Mettre à jour</button>
                                     </form>
                                 </div>
                             </div>

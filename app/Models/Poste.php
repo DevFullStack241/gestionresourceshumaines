@@ -8,17 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Poste extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'name',
-        'quota_horaire',
-        'qualifications',
+        'position_name',
+        'hourly_quota',
+        'required_skills',
+        'additional_information',
     ];
 
-    public function missions()
-    {
-        return $this->hasMany(Mission::class);
-    }
+    //relation
 
     public function affectations()
     {

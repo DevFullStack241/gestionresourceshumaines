@@ -11,13 +11,13 @@
             <div class="col-md-6 col-lg-5">
                 <div class="login-box bg-white box-shadow border-radius-10">
                     <div class="login-title">
-                        <h2 class="text-center text-primary">Responsable Login</h2>
+                        <h2 class="text-center text-primary">Responsable Connexion</h2>
                     </div>
                     <form action="{{ route('responsable.login-handler') }}" method="POST">
                         @csrf
                         <x-alert.form-alert />
                         <div class="input-group custom">
-                            <input type="text" class="form-control form-control-lg" placeholder="Email/Username"
+                            <input type="text" class="form-control form-control-lg" placeholder="E-mail/Nom d'utilisateur"
                                 name="login_id" value="{{ old('login_id') }}">
                             <div class="input-group-append custom">
                                 <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
@@ -45,21 +45,21 @@
                             </div>
                             <div class="col-6">
                                 <div class="forgot-password">
-                                    <a href="{{ route('responsable.forgot-password') }}">Forgot Password</a>
+                                    <a href="{{ route('responsable.forgot-password') }}">Mot de passe oublié</a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="input-group mb-0">
-                                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
+                                    <input class="btn btn-primary btn-lg btn-block" type="submit" value="Se connecter">
                                 </div>
                                 <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
                                     OU
                                 </div>
                                 <div class="input-group mb-0">
-                                    <a class="btn btn-outline-primary btn-lg btn-block" href="register.html">Register To
-                                        Create Account</a>
+                                    <a class="btn btn-outline-primary btn-lg btn-block" href="{{ route('responsable.register') }}"">Inscrivez-vous pour
+                                        Créer un compte</a>
                                 </div>
                             </div>
                         </div>

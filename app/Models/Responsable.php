@@ -64,4 +64,11 @@ class Responsable extends Authenticatable
             return asset('/images/users/default-avatar.png');
         }
     }
+
+    //relation
+
+    public function mission()
+    {
+        return $this->hasMany(Mission::class);
+    }
 }

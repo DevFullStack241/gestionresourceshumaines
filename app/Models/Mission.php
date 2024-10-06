@@ -8,15 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Mission extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'title',
-        'description',
-        'date_debut',
-        'date_fin',
         'client_id',
         'responsable_id',
+        'title',
+        'description',
+        'location',
+        'start_date',
+        'end_date',
+        'status',
     ];
+
+    //relations
 
     public function client()
     {
@@ -28,18 +31,13 @@ class Mission extends Model
         return $this->belongsTo(Responsable::class);
     }
 
-    public function postes()
-    {
-        return $this->belongsToMany(Poste::class, 'mission_poste');
-    }
-
     public function affectations()
     {
         return $this->hasMany(Affectation::class);
     }
 
-    public function chat()
+    public function chats()
     {
-        return $this->hasOne(Chat::class);
+        return $this->hasMany(Chat::class);
     }
 }

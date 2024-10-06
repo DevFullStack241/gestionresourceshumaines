@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Disponibilite extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'agent_id',
-        'date',
-        'disponible',
+        'start_time',
+        'end_time',
+        'status',
     ];
+
+    // Relations
 
     public function agent()
     {

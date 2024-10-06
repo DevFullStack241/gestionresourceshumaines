@@ -645,7 +645,7 @@ p {
 
 .card-box,
 .da-card {
-    background-color: #fff;
+    background-color: #d6d5d3;
     border-radius: 10px;
     -webkit-box-shadow: 0 0 28px rgba(0, 0, 0, .08);
     box-shadow: 0 0 28px rgba(0, 0, 0, .08)
@@ -1468,7 +1468,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
     position: fixed;
     height: 70px;
     width: calc(100% - 280px);
-    background: #fff;
+    background: #d6d5d3;
     right: 0;
     top: 0;
     z-index: 123;
@@ -2107,7 +2107,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 }
 
 .sidebar-light .sidebar-menu>ul>li>.dropdown-toggle.active {
-    background-color: #142127;
+    background-color: #498dee;
     color: #fff
 }
 
@@ -2133,7 +2133,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 }
 
 .sidebar-light .left-side-bar {
-    background: #fff
+    background: #d6d5d3
 }
 
 .sidebar-light .sidebar-menu .dropdown-toggle {
@@ -2159,7 +2159,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
 .sidebar-light .sidebar-menu .submenu li a.active,
 .sidebar-light .sidebar-menu .submenu li a:hover {
     color: #fff;
-    background-color: #142127
+    background-color: #498dee
 }
 
 .sidebar-light .menu-block .mCS-dark-2.mCSB_scrollTools .mCSB_draggerRail {
@@ -2968,14 +2968,14 @@ body.IE .register-page-wrap .container {
 
 .da-card .da-social ul li a:hover {
     background: #fff;
-    color: #1b00ff
+    color: #498dee
 }
 
 .nav-tabs.customtab .nav-item.show .nav-link,
 .nav-tabs.customtab .nav-link.active {
-    color: #1b00ff;
+    color: #000000;
     border: 0;
-    border-bottom: 2px solid #1b00ff
+    border-bottom: 2px solid #000000
 }
 
 .nav-tabs.customtab .nav-item {
@@ -2992,9 +2992,9 @@ body.IE .register-page-wrap .container {
 
 .nav-tabs.customtab .nav-link:focus,
 .nav-tabs.customtab .nav-link:hover {
-    color: #1b00ff;
+    color: #498dee;
     border: 0;
-    border-bottom: 2px solid #1b00ff
+    border-bottom: 2px solid #498dee
 }
 
 .nav.vtabs {
@@ -4471,8 +4471,8 @@ body.IE .register-page-wrap .container {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background: #334148;
-    color: #fff
+    background: #498dee;
+    color: #000000
 }
 
 .right-sidebar {

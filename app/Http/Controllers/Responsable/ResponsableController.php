@@ -92,10 +92,10 @@ class ResponsableController extends Controller
             if (sendEmail($mailConfig)) {
                 return redirect()->route('responsable.register-success');
             } else {
-                return redirect()->route('responsable.register')->with('fail', 'Something went wrong while sending verification link.');
+                return redirect()->route('responsable.register')->with('fail', 'Une erreur s\'est produite lors de l\'envoi du lien de vérification.');
             }
         } else {
-            return redirect()->route('responsable.register')->with('fail', 'Something went wrong.');
+            return redirect()->route('responsable.register')->with('fail', 'Quelque chose s\'est mal passé.');
         }
     } //End Method
 
@@ -111,12 +111,12 @@ class ResponsableController extends Controller
                 $responsable->email_verified_at = Carbon::now();
                 $responsable->save();
 
-                return redirect()->route('responsable.login')->with('success', 'Good!, Your e-mail is verified. Login with your credentials and complete setup your responsable account.');
+                return redirect()->route('responsable.login')->with('success', 'Bien ! Votre e-mail est vérifié. Connectez-vous avec vos identifiants et finalisez la configuration de votre compte responsable.');
             } else {
-                return redirect()->route('responsable.login')->with('info', 'Your e-mail is already verified. You can now login.');
+                return redirect()->route('responsable.login')->with('info', 'Votre adresse e-mail est déjà vérifiée. Vous pouvez maintenant vous connecter.');
             }
         } else {
-            return redirect()->route('responsable.register')->with('fail', 'Invalid Token.');
+            return redirect()->route('responsable.register')->with('fail', 'Jeton non valide.');
         }
     } //End Method
 
@@ -134,19 +134,19 @@ class ResponsableController extends Controller
                 'login_id' => 'required|email|exists:responsables,email',
                 'password' => 'required|min:5|max:45'
             ], [
-                'login_id.required' => 'Email or Username is required.',
-                'login_id.email' => 'Invalid email address.',
-                'login_id.exists' => 'Email is not exists in system.',
-                'password.required' => 'Password is required'
+                'login_id.required' => 'L\'e-mail ou le nom d\'utilisateur est requis.',
+                'login_id.email' => 'Adresse email invalide.',
+                'login_id.exists' => 'L\'e-mail n\'existe pas dans le système.',
+                'password.required' => 'Le mot de passe est requis'
             ]);
         } else {
             $request->validate([
                 'login_id' => 'required|exists:responsables,username',
                 'password' => 'required|min:5|max:45'
             ], [
-                'login_id.required' => 'Email or Username is required.',
-                'login_id.exists' => 'Username is not exists in system.',
-                'password.required' => 'Password is required'
+                'login_id.required' => 'L\'e-mail ou le nom d\'utilisateur est requis.',
+                'login_id.exists' => 'L\'e-mail n\'existe pas dans le système.',
+                'password.required' => 'Le mot de passe est requis'
             ]);
         }
 
@@ -159,19 +159,19 @@ class ResponsableController extends Controller
             // return redirect()->route('responsable.home');
             if (!auth('responsable')->user()->verified) {
                 auth('responsable')->logout();
-                return redirect()->route('responsable.login')->with('fail', 'Your account is not verified. Check in your email and click on the link we had sent in order to verify your email for responsable account.');
+                return redirect()->route('responsable.login')->with('fail', 'Votre compte n\'est pas vérifié. Vérifiez votre email et cliquez sur le lien que nous vous avons envoyé afin de vérifier votre email pour le compte responsable.');
             } else {
                 return redirect()->route('responsable.home');
             }
         } else {
-            return redirect()->route('responsable.login')->withInput()->with('fail', 'Incorrect password.');
+            return redirect()->route('responsable.login')->withInput()->with('fail', 'Mot de passe incorrect.');
         }
     } //End Method
 
     public function logoutHandler(Request $request)
     {
         Auth::guard('responsable')->logout();
-        return redirect()->route('responsable.login')->with('fail', 'You are logged out!');
+        return redirect()->route('responsable.login')->with('fail', 'Vous êtes déconnecté !');
     } //End Method
 
     public function forgotPassword(Request $request)
@@ -188,9 +188,9 @@ class ResponsableController extends Controller
         $request->validate([
             'email' => 'required|email|exists:responsables,email'
         ], [
-            'email.required' => 'The :attribute is required',
-            'email.email' => 'Invalid email address',
-            'email.exists' => 'The :attribute is not exists in our system'
+            'email.required' => 'L\'attribut est obligatoire',
+            'email.email' => 'Adresse email invalide',
+            'email.exists' => 'L\'attribut n\'existe pas dans notre système'
         ]);
 
         //Get Responsable details
@@ -239,9 +239,9 @@ class ResponsableController extends Controller
         );
 
         if (sendEmail($mailConfig)) {
-            return redirect()->route('responsable.forgot-password')->with('success', 'We have e-mailed your password reset link.');
+            return redirect()->route('responsable.forgot-password')->with('success', 'Nous vous avons envoyé par e-mail un lien de réinitialisation de votre mot de passe.');
         } else {
-            return redirect()->route('responsable.forgot-password')->with('fail', 'Something went wrong.');
+            return redirect()->route('responsable.forgot-password')->with('fail', 'Quelque chose s\'est mal passé.');
         }
     } //End Method
 
@@ -258,12 +258,12 @@ class ResponsableController extends Controller
 
             if ($diffMins > constDefaults::tokenExpiredMinutes) {
                 //When token is older that 15 minutes
-                return redirect()->route('responsable.forgot-password', ['token' => $token])->with('fail', 'Token expired!. Request another reset password link.');
+                return redirect()->route('responsable.forgot-password', ['token' => $token])->with('fail', 'Jeton expiré! Demandez un autre lien de réinitialisation du mot de passe.');
             } else {
                 return view('backend.pages.responsable.auth.reset')->with(['token' => $token]);
             }
         } else {
-            return redirect()->route('responsable.forgot-password', ['token' => $token])->with('fail', 'Invalid token!, request another reset password link.');
+            return redirect()->route('responsable.forgot-password', ['token' => $token])->with('fail', 'Jeton non valide! Demandez un autre lien de réinitialisation de mot de passe.');
         }
     } //End Method
 
@@ -310,7 +310,7 @@ class ResponsableController extends Controller
         );
 
         sendEmail($mailConfig);
-        return redirect()->route('responsable.login')->with('success', 'Done!, Your password has been changed. Use new password to login into system.');
+        return redirect()->route('responsable.login')->with('success', 'C\'est fait ! Votre mot de passe a été modifié. Utilisez un nouveau mot de passe pour vous connecter au système.');
     } //End Method
 
     public function profileView(Request $request)
@@ -338,9 +338,9 @@ class ResponsableController extends Controller
             }
             $responsable->update(['picture' => $infos->getName]);
 
-            return response()->json(['status' => 1, 'msg' => 'Your profile picture has been successfully updated.']);
+            return response()->json(['status' => 1, 'msg' => 'Votre photo de profil a été mise à jour avec succès.']);
         } else {
-            return response()->json(['status' => 0, 'msg' => 'Something went wrong.']);
+            return response()->json(['status' => 0, 'msg' => 'Quelque chose s\'est mal passé.']);
         }
     }
 }

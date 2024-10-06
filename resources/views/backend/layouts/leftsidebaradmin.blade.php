@@ -28,30 +28,112 @@
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
                         <span class="micon bi bi-textarea-resize"></span
-                        ><span class="mtext">Forms</span>
+                        ><span class="mtext">Responsables</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Form Basic</a></li>
+                        <li><a href="form-basic.html">Liste des responsables</a></li>
                         <li>
-                            <a href="advanced-components.html">Advanced Components</a>
+                            <a href="advanced-components.html">Ajouter un responsable</a>
                         </li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="html5-editor.html">HTML5 Editor</a></li>
-                        <li><a href="form-pickers.html">Form Pickers</a></li>
-                        <li><a href="image-cropper.html">Image Cropper</a></li>
-                        <li><a href="image-dropzone.html">Image Dropzone</a></li>
-
                         @endif
-
-
-
                     </ul>
                 </li>
                 <li>
-                    <a href="calendar.html" class="dropdown-toggle no-arrow">
+                    <a href="" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span
                         ><span class="mtext">Calendar</span>
                     </a>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Agents</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des agents</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter un agent</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Clients</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des clients</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter un client</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Missions</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des missions</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter une mission</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Postes</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des postes</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter un poste</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Affectations</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des affectations</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter une affectation</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Quart de travail</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des quarts de travail</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter un quart de travail</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon bi bi-textarea-resize"></span
+                        ><span class="mtext">Disponibilitées</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="form-basic.html">Liste des disponibilitées</a></li>
+                        <li>
+                            <a href="advanced-components.html">Ajouter une disponibilitée</a>
+                        </li>
+
+                    </ul>
                 </li>
             </ul>
         </div>

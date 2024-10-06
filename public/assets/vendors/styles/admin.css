@@ -4054,7 +4054,7 @@ fieldset:disabled a.btn {
     color: #212529;
     text-align: inherit;
     white-space: nowrap;
-    background-color: transparent;
+    background-color: #d6d5d3;
     border: 0
 }
 
@@ -11629,7 +11629,7 @@ a.text-primary:hover {
 }
 
 .text-secondary {
-    color: #6c757d !important
+    color: #000000
 }
 
 a.text-secondary:focus,
@@ -11683,7 +11683,7 @@ a.text-light:hover {
 }
 
 .text-dark {
-    color: #343a40 !important
+    color: #000000 !important
 }
 
 a.text-dark:focus,

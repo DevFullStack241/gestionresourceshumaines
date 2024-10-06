@@ -33,11 +33,6 @@
                     <img src="{{ asset('assets/vendors/images/deskapp-logo.svg') }}" alt="" />
                 </a>
             </div>
-            <div class="login-menu">
-                <ul>
-                    <li><a href="{{ route('responsable.register') }}">Register</a></li>
-                </ul>
-            </div>
         </div>
     </div>
     <div
