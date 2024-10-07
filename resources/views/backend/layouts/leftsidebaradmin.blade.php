@@ -21,17 +21,17 @@
 
                 <li class="dropdown">
                     <a href="{{ route('admin.dashboard') }}" class="dropdown-toggle no-arrow {{ Route::is('admin.dashboard') ? 'active' : '' }}">
-                        <span class="micon bi bi-house"></span
+                        <span class="micon fa fa-home"></span
                         ><span class="mtext">Dashboard</span>
                     </a>
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
+                        <span class="micon fa fa-group"></span
                         ><span class="mtext">Responsables</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des responsables</a></li>
+                        <li><a href="{{ route('admin.responsable.index') }}">Liste des responsables</a></li>
                         <li>
                             <a href="advanced-components.html">Ajouter un responsable</a>
                         </li>
@@ -59,13 +59,13 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
+                        <span class="micon dw dw-apartment"></span
                         ><span class="mtext">Clients</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des clients</a></li>
+                        <li><a href="{{ route('admin.client.index') }}">Liste des clients</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter un client</a>
+                            <a href="{{ route('admin.client.create') }}">Ajouter un client</a>
                         </li>
 
                     </ul>

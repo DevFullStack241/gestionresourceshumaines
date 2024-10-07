@@ -60,11 +60,13 @@
 
     <div class="main-container">
         <div class="pd-ltr-20 xs-pd-20-10">
-            @yield('content')
-            {{-- <div class="footer-wrap pd-20 mb-20 card-box">
+            <div class="min-height-200px">
+                @yield('content')
+                {{-- <div class="footer-wrap pd-20 mb-20 card-box">
                 DeskApp - Bootstrap 4 Admin Template By
                 <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
             </div> --}}
+            </div>
         </div>
     </div>
 

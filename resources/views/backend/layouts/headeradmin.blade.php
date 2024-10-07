@@ -2,7 +2,7 @@
     <div class="header-left">
         <div class="menu-icon bi bi-list"></div>
         <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div>
-        <div class="header-search">
+        {{-- <div class="header-search">
             <form>
                 <div class="form-group mb-0">
                     <i class="dw dw-search2 search-icon"></i>
@@ -37,18 +37,18 @@
                     </div>
                 </div>
             </form>
-        </div>
+        </div> --}}
     </div>
     <div class="header-right">
-        <div class="dashboard-setting user-notification">
+        {{-- <div class="dashboard-setting user-notification">
             <div class="dropdown">
                 <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
                     <i class="dw dw-settings2"></i>
                 </a>
             </div>
-        </div>
+        </div> --}}
         <div class="user-notification">
-            <div class="dropdown">
+            {{-- <div class="dropdown">
                 <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
                     <i class="icon-copy dw dw-notification"></i>
                     <span class="badge notification-active"></span>
@@ -119,7 +119,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         {{-- <livewire:admin-responsable-header-profile-info> --}}

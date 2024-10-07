@@ -13,6 +13,8 @@ class ClientController extends Controller
     public function index()
     {
         //
+        $clients = Client::all(); // Récupérer tous les responsables
+        return view('backend.pages.admin.client.index', compact('clients'));
     }
 
     /**
@@ -21,6 +23,7 @@ class ClientController extends Controller
     public function create()
     {
         //
+        return view('backend.pages.admin.client.create');
     }
 
     /**
@@ -28,13 +31,27 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validation des données
+        $validated = $request->validate([
+            'company_name' => 'required|string|max:255',
+            'legal_name' => 'nullable|string|max:255',
+            'email' => 'required|email|unique:clients,email',
+            'phone' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:255',
+            'additional_information' => 'nullable|string',
+        ]);
+
+        // Création du client
+        Client::create($validated);
+
+        // Redirection avec message de succès
+        return redirect()->route('admin.client.index')->with('success', 'Client créé avec succès.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Client $client)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +59,7 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Client $client)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +67,7 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +75,7 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Client $client)
+    public function destroy(string $id)
     {
         //
     }
