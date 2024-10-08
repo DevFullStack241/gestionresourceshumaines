@@ -24,19 +24,22 @@
     <div class="clearfix">
         <div class="pull-left">
             <h4 class="text-black h4">Formulaire</h4>
-            <p class="mb-30">All bootstrap element classies</p>
+
         </div>
         <div class="pull-right">
-            <a href="#basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y" data-toggle="collapse"
-                role="button"><i class="fa fa-code"></i> Source Code</a>
+            <a href="{{ route('admin.responsable.index') }}" class="btn btn-primary" role="button">
+                <i class="micon ion-chevron-left"> </i>  Retour
+            </a>
         </div>
     </div>
+    <br>
+    <br>
     <form action="{{ route('admin.responsable.store') }}" method="POST">
         @csrf
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Nom et Prénom</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" placeholder="Saisir votre et prénom" value="{{ old('name') }}">
+                <input class="form-control" type="text" placeholder="Saisir votre et prénom" name="name" value="{{ old('name') }}">
                 @error('name')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -45,7 +48,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Email</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" placeholder="Saisir votre adresse email" type="email"
+                <input class="form-control" placeholder="Saisir votre adresse email" name="email" type="email"
                     value="{{ old('email') }}">
                 @error('email')
                 <span class="text-danger ml-2">{{ $message }}</span>
@@ -55,7 +58,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Mot de passe</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" placeholder="Saisir votre mot de passe" type="password">
+                <input class="form-control" placeholder="Saisir votre mot de passe" name="password" type="password">
                 @error('password')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -64,14 +67,14 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Confirmez le mot de passe</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" placeholder="Confirmez votre mot de passe" type="password">
+                <input class="form-control" placeholder="Confirmez votre mot de passe" name="confirm_password" type="password">
                 @error('confirm_password')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row justify-content-center">
+            <div class="col-md-2">
                 <div class="input-group mb-0">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
                 </div>

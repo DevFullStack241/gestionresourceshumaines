@@ -27,8 +27,9 @@
             <br>
         </div>
         <div class="pull-right">
-            <a href="#basic-form1" class="btn btn-primary btn-sm scroll-click" rel="content-y" data-toggle="collapse"
-                role="button"><i class="fa fa-code"></i> Source Code</a>
+            <a href="{{ route('admin.client.index') }}" class="btn btn-primary" role="button">
+                <i class="micon ion-chevron-left"> </i>  Retour
+            </a>
         </div>
     </div>
     <form action="{{ route('admin.client.store') }}" method="POST">
@@ -46,8 +47,8 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Raison Social</label>
             <div class="col-sm-12 col-md-10">
-                <textarea class="form-control" name="raison_social">{{ old('raison_social') }}</textarea>
-                @error('raison_social')
+                <textarea class="form-control" name="legal_name">{{ old('legal_name') }}</textarea>
+                @error('legal_name')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
             </div>
@@ -86,8 +87,8 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Information Supplementaire</label>
             <div class="col-sm-12 col-md-10">
-                <textarea class="form-control" name="info_supplementaire">{{ old('info_supplementaire') }}</textarea>
-                @error('info_supplementaire')
+                <textarea class="form-control" name="additional_information">{{ old('additional_information') }}</textarea>
+                @error('additional_information')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
             </div>

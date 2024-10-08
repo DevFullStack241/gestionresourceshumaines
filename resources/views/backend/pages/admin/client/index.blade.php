@@ -1,5 +1,18 @@
 @extends('backend.layouts.templateadmin')
 @section('content')
+
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
+
+@if (session('error'))
+<div class="alert alert-danger">
+    {{ session('error') }}
+</div>
+@endif
+
 <div class="page-header">
     <div class="row">
         <div class="col-md-12 col-sm-12">
@@ -37,6 +50,7 @@
                 <th scope="col">Téléphone</th>
                 <th scope="col">Adresse</th>
                 <th scope="col">Information Supplementaire</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -49,6 +63,29 @@
                 <td>{{ $client->phone }}</td>
                 <td>{{ $client->address }}</td>
                 <td style="text-align: justify;">{{ $client->additional_information }}</td>
+                <td>
+                    <div class="dropdown">
+                        <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
+                            role="button" data-toggle="dropdown" aria-expanded="false">
+                            <i class="dw dw-more"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                            <a class="dropdown-item" href="{{ route('admin.client.show', $client->id) }}"><i
+                                    class="dw dw-eye"></i> View</a>
+                            <a class="dropdown-item" href="{{ route('admin.client.edit', $client->id) }}"><i
+                                    class="dw dw-edit2"></i> Edit</a>
+
+                            <form action="{{ route('admin.client.delete', $client->id) }}" method="POST"
+                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="dropdown-item" style="border: none; background: none;">
+                                    <i class="dw dw-delete-3"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </td>
             </tr>
             @endforeach
         </tbody>

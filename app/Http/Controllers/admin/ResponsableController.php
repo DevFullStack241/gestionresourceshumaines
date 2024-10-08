@@ -92,7 +92,9 @@ class ResponsableController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Trouver le responsable par ID
+        $responsable = Responsable::findOrFail($id);
+        return view('backend.pages.admin.responsable.show', compact('responsable'));
     }
 
     /**
@@ -100,7 +102,9 @@ class ResponsableController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // Trouver le responsable par ID
+        $responsable = Responsable::findOrFail($id);
+        return view('backend.pages.admin.responsable.edit', compact('responsable'));
     }
 
     /**
@@ -108,7 +112,33 @@ class ResponsableController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Valider les données du formulaire
+        $request->validate([
+            'name' => 'required',
+            'username' => 'required',
+            'email' => 'required|email|unique:responsables,email,' . $id, // Ignorer l'email actuel
+            'phone' => 'nullable|string|max:20',
+            'address' => 'nullable|string|max:255',
+        ]);
+
+        // Trouver le responsable par ID
+        $responsable = Responsable::findOrFail($id);
+
+        // Mettre à jour les données du responsable
+        $responsable->name = $request->name;
+        $responsable->username = $request->username;
+        $responsable->email = $request->email;
+        $responsable->phone = $request->phone;
+        $responsable->address = $request->address;
+
+        // Enregistrer les modifications
+        $saved = $responsable->save();
+
+        if ($saved) {
+            return redirect()->route('admin.responsable.index')->with('success', 'Responsable mis à jour avec succès.');
+        } else {
+            return redirect()->route('admin.responsable.edit', $id)->with('fail', 'Une erreur s\'est produite lors de la mise à jour.');
+        }
     }
 
     /**
@@ -116,6 +146,16 @@ class ResponsableController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // Trouver le responsable par ID
+        $responsable = Responsable::findOrFail($id);
+
+        // Supprimer le responsable
+        $deleted = $responsable->delete();
+
+        if ($deleted) {
+            return redirect()->route('admin.responsable.index')->with('success', 'Responsable supprimé avec succès.');
+        } else {
+            return redirect()->route('admin.responsable.index')->with('fail', 'Une erreur s\'est produite lors de la suppression.');
+        }
     }
 }

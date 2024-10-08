@@ -36,7 +36,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 Route::post('/store', 'store')->name('store');
                 Route::get('/show/{id}', 'show')->name('show');
                 Route::get('/edit/{id}', 'edit')->name('edit');
-                Route::post('/update/{id}', 'update')->name('update');
+                Route::put('/update/{id}', 'update')->name('update');
                 Route::delete('/delete/{id}', 'destroy')->name('delete');
                 Route::get('/verify/{token}', 'verify')->name('verify');
             });
@@ -51,7 +51,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 Route::post('/store', 'store')->name('store');
                 Route::get('/show/{id}', 'show')->name('show');
                 Route::get('/edit/{id}', 'edit')->name('edit');
-                Route::post('/update/{id}', 'update')->name('update');
+                Route::put('/update/{id}', 'update')->name('update');
                 Route::delete('/delete/{id}', 'destroy')->name('delete');
             });
         });
