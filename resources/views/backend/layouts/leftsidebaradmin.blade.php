@@ -33,7 +33,7 @@
                     <ul class="submenu">
                         <li><a href="{{ route('admin.responsable.index') }}">Liste des responsables</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter un responsable</a>
+                            <a href="{{ route('admin.responsable.create') }}">Ajouter un responsable</a>
                         </li>
                         @endif
                     </ul>
@@ -76,9 +76,9 @@
                         ><span class="mtext">Missions</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des missions</a></li>
+                        <li><a href="{{ route('admin.mission.index') }}">Liste des missions</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter une mission</a>
+                            <a href="{{ route('admin.mission.create') }}">Ajouter une mission</a>
                         </li>
 
                     </ul>

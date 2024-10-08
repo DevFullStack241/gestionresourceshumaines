@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 class Mission extends Model
 {
@@ -17,6 +18,12 @@ class Mission extends Model
         'start_date',
         'end_date',
         'status',
+    ];
+
+    // Utilisation de $casts pour s'assurer que start_date et end_date sont toujours des objets Carbon
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
     ];
 
     //relations
@@ -39,5 +46,20 @@ class Mission extends Model
     public function chats()
     {
         return $this->hasMany(Chat::class);
+    }
+
+
+
+    public function getStartDateFormattedAttribute()
+    {
+        return $this->start_date ? $this->start_date->format('Y-m-d\TH:i') : null;
+    }
+
+    /**
+     * Accesseur pour formater end_date
+     */
+    public function getEndDateFormattedAttribute()
+    {
+        return $this->end_date ? $this->end_date->format('Y-m-d\TH:i') : null;
     }
 }

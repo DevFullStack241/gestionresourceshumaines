@@ -75,13 +75,18 @@
         </div>
     </div>
 
-    <div class="row justify-content-center">
-        <a href="{{ route('admin.client.edit', $client->id) }}" class="btn btn-warning btn-lg">Modifier</a>
-        <form action="{{ route('admin.client.delete', $client->id) }}" method="POST" class="ml-3">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger btn-lg">Supprimer</button>
-        </form>
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Créé le</label>
+        <div class="col-sm-12 col-md-10">
+            <p>{{ \Carbon\Carbon::parse($client->created_at)->format('d/m/Y H:i') }}</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Mis à jour le</label>
+        <div class="col-sm-12 col-md-10">
+            <p>{{ \Carbon\Carbon::parse($client->updated_at)->format('d/m/Y H:i') }}</p>
+        </div>
     </div>
 </div>
 @endsection

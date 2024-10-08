@@ -4,7 +4,8 @@ use App\Http\Controllers\admin\CalendarController;
 use App\Http\Controllers\admin\ResponsableController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ClientController;
+use App\Http\Controllers\admin\ClientController;
+use App\Http\Controllers\admin\MissionController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -55,5 +56,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
                 Route::delete('/delete/{id}', 'destroy')->name('delete');
             });
         });
+
+
+        //MISSION ROUTES
+        Route::prefix('mission')->name('mission.')->group(function () {
+
+            Route::controller(MissionController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{id}', 'show')->name('show');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::put('/update/{id}', 'update')->name('update');
+                Route::delete('/delete/{id}', 'destroy')->name('delete');
+            });
+        });
+
+
     });
 });

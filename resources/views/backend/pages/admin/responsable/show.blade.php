@@ -82,5 +82,19 @@
             <p class="form-control-static">{{ $responsable->status }}</p>
         </div>
     </div>
+
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Créé le</label>
+        <div class="col-sm-12 col-md-10">
+            <p>{{ \Carbon\Carbon::parse($responsable->created_at)->format('d/m/Y H:i') }}</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Mis à jour le</label>
+        <div class="col-sm-12 col-md-10">
+            <p>{{ \Carbon\Carbon::parse($responsable->updated_at)->format('d/m/Y H:i') }}</p>
+        </div>
+    </div>
 </div>
 @endsection
