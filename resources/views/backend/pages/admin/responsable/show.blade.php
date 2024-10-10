@@ -37,63 +37,63 @@
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Nom et Prénom:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->name }}</p>
+            <p class="form-control-static">{{ $responsables->name }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Nom d'utilisateur:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->username }}</p>
+            <p class="form-control-static">{{ $responsables->username }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Email:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->email }}</p>
+            <p class="form-control-static">{{ $responsables->email }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Mot de passe:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->password }}</p>
+            <p class="form-control-static">{{ $responsables->password }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Téléphone:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->phone }}</p>
+            <p class="form-control-static">{{ $responsables->phone }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Adresse:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->address }}</p>
+            <p class="form-control-static">{{ $responsables->address }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Statut:</label>
         <div class="col-sm-12 col-md-10">
-            <p class="form-control-static">{{ $responsable->status }}</p>
+            <p class="form-control-static">{{ $responsables->status }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Créé le</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ \Carbon\Carbon::parse($responsable->created_at)->format('d/m/Y H:i') }}</p>
+            <p>{{ \Carbon\Carbon::parse($responsables->created_at)->format('d/m/Y H:i') }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Mis à jour le</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ \Carbon\Carbon::parse($responsable->updated_at)->format('d/m/Y H:i') }}</p>
+            <p>{{ \Carbon\Carbon::parse($responsables->updated_at)->format('d/m/Y H:i') }}</p>
         </div>
     </div>
 </div>

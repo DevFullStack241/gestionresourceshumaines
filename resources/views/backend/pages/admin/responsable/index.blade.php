@@ -55,16 +55,16 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($responsables as $responsable)
+            @foreach ($responsables as $responsables)
             <tr>
-                <th scope="row">{{ $responsable->id }}</th>
-                <td>{{ $responsable->name }}</td>
-                <td>{{ $responsable->username }}</td>
-                <td>{{ $responsable->email }}</td>
-                <td>{{ $responsable->password }}</td>
-                <td>{{ $responsable->address }}</td>
-                <td>{{ $responsable->phone }}</td>
-                <td>{{ $responsable->status }}</td>
+                <th scope="row">{{ $responsables->id }}</th>
+                <td>{{ $responsables->name }}</td>
+                <td>{{ $responsables->username }}</td>
+                <td>{{ $responsables->email }}</td>
+                <td>{{ $responsables->password }}</td>
+                <td>{{ $responsables->address }}</td>
+                <td>{{ $responsables->phone }}</td>
+                <td>{{ $responsables->status }}</td>
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
@@ -72,12 +72,12 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="{{ route('admin.responsable.show', $responsable->id) }}"><i
+                            <a class="dropdown-item" href="{{ route('admin.responsable.show', $responsables->id) }}"><i
                                     class="dw dw-eye"></i> View</a>
-                            <a class="dropdown-item" href="{{ route('admin.responsable.edit', $responsable->id) }}"><i
+                            <a class="dropdown-item" href="{{ route('admin.responsable.edit', $responsables->id) }}"><i
                                     class="dw dw-edit2"></i> Edit</a>
 
-                            <form action="{{ route('admin.responsable.delete', $responsable->id) }}" method="POST"
+                            <form action="{{ route('admin.responsable.delete', $responsables->id) }}" method="POST"
                                 onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
                                 @csrf
                                 @method('DELETE')

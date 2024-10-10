@@ -1,11 +1,15 @@
 <?php
 
+use App\Http\Controllers\admin\AffectationController;
 use App\Http\Controllers\admin\CalendarController;
+use App\Http\Controllers\admin\DisponibiliteController;
+use App\Http\Controllers\admin\PosteController;
 use App\Http\Controllers\admin\ResponsableController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\admin\ClientController;
 use App\Http\Controllers\admin\MissionController;
+use App\Http\Controllers\admin\QuartTravailController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -73,5 +77,72 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
 
 
+        //POSTE ROUTES
+        Route::prefix('poste')->name('poste.')->group(function () {
+
+            Route::controller(PosteController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{id}', 'show')->name('show');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::put('/update/{id}', 'update')->name('update');
+                Route::delete('/delete/{id}', 'destroy')->name('delete');
+            });
+        });
+
+
+        //AFFECTATION ROUTES
+        Route::prefix('affectation')->name('affectation.')->group(function () {
+
+            Route::controller(AffectationController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{id}', 'show')->name('show');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::put('/update/{id}', 'update')->name('update');
+                Route::delete('/delete/{id}', 'destroy')->name('delete');
+            });
+        });
+
+        //QUART DE TRAVAIL ROUTES
+        Route::prefix('quarttravail')->name('quarttravail.')->group(function () {
+
+            Route::controller(QuartTravailController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{id}', 'show')->name('show');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::put('/update/{id}', 'update')->name('update');
+                Route::delete('/delete/{id}', 'destroy')->name('delete');
+            });
+        });
+
+        //DISPONIBILITE ROUTES
+        Route::prefix('disponibilite')->name('disponibilite.')->group(function () {
+
+            Route::controller(DisponibiliteController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{id}', 'show')->name('show');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::put('/update/{id}', 'update')->name('update');
+                Route::delete('/delete/{id}', 'destroy')->name('delete');
+            });
+        });
+
+        //CALENDAR ROUTES
+        Route::prefix('calendar')->name('calendar.')->group(function () {
+
+            Route::controller(CalendarController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+            });
+        });
+
+
     });
+
 });

@@ -42,11 +42,11 @@ class ResponsableController extends Controller
         ]);
 
         // Créer un nouveau responsable
-        $responsable = new Responsable();
-        $responsable->name = $request->name;
-        $responsable->email = $request->email;
-        $responsable->password = Hash::make($request->password);
-        $saved = $responsable->save();
+        $responsables = new Responsable();
+        $responsables->name = $request->name;
+        $responsables->email = $request->email;
+        $responsables->password = Hash::make($request->password);
+        $saved = $responsables->save();
 
         if ($saved) {
             // Générer un token de vérification
@@ -93,8 +93,8 @@ class ResponsableController extends Controller
     public function show(string $id)
     {
         // Trouver le responsable par ID
-        $responsable = Responsable::findOrFail($id);
-        return view('backend.pages.admin.responsable.show', compact('responsable'));
+        $responsables = Responsable::findOrFail($id);
+        return view('backend.pages.admin.responsable.show', compact('responsables'));
     }
 
     /**
@@ -103,8 +103,8 @@ class ResponsableController extends Controller
     public function edit(string $id)
     {
         // Trouver le responsable par ID
-        $responsable = Responsable::findOrFail($id);
-        return view('backend.pages.admin.responsable.edit', compact('responsable'));
+        $responsables = Responsable::findOrFail($id);
+        return view('backend.pages.admin.responsable.edit', compact('responsables'));
     }
 
     /**
@@ -122,17 +122,17 @@ class ResponsableController extends Controller
         ]);
 
         // Trouver le responsable par ID
-        $responsable = Responsable::findOrFail($id);
+        $responsables = Responsable::findOrFail($id);
 
         // Mettre à jour les données du responsable
-        $responsable->name = $request->name;
-        $responsable->username = $request->username;
-        $responsable->email = $request->email;
-        $responsable->phone = $request->phone;
-        $responsable->address = $request->address;
+        $responsables->name = $request->name;
+        $responsables->username = $request->username;
+        $responsables->email = $request->email;
+        $responsables->phone = $request->phone;
+        $responsables->address = $request->address;
 
         // Enregistrer les modifications
-        $saved = $responsable->save();
+        $saved = $responsables->save();
 
         if ($saved) {
             return redirect()->route('admin.responsable.index')->with('success', 'Responsable mis à jour avec succès.');
@@ -147,10 +147,10 @@ class ResponsableController extends Controller
     public function destroy(string $id)
     {
         // Trouver le responsable par ID
-        $responsable = Responsable::findOrFail($id);
+        $responsables = Responsable::findOrFail($id);
 
         // Supprimer le responsable
-        $deleted = $responsable->delete();
+        $deleted = $responsables->delete();
 
         if ($deleted) {
             return redirect()->route('admin.responsable.index')->with('success', 'Responsable supprimé avec succès.');

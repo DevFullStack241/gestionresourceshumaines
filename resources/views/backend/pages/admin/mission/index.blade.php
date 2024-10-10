@@ -58,17 +58,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($missions as $mission)
+            @foreach ($missions as $missions)
             <tr>
-                <th scope="row">{{ $mission->id }}</th>
-                <td>{{ $mission->client->company_name }}</td>
-                <td>{{ $mission->responsable->name }}</td>
-                <td>{{ $mission->title }}</td>
-                <td>{{ $mission->description }}</td>
-                <td>{{ $mission->location }}</td>
-                <td>{{ ucfirst($mission->status) }}</td>
-                <td>{{ $mission->start_date }}</td>
-                <td>{{ $mission->end_date }}</td>
+                <th scope="row">{{ $missions->id }}</th>
+                <td>{{ $missions->client->company_name }}</td>
+                <td>{{ $missions->responsable->name }}</td>
+                <td>{{ $missions->title }}</td>
+                <td>{{ $missions->description }}</td>
+                <td>{{ $missions->location }}</td>
+                <td>{{ ucfirst($missions->status) }}</td>
+                <td>{{ $missions->start_date }}</td>
+                <td>{{ $missions->end_date }}</td>
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
@@ -76,13 +76,13 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="{{ route('admin.mission.show', $mission->id) }}">
+                            <a class="dropdown-item" href="{{ route('admin.mission.show', $missions->id) }}">
                                 <i class="dw dw-eye"></i> Voir
                             </a>
-                            <a class="dropdown-item" href="{{ route('admin.mission.edit', $mission->id) }}">
+                            <a class="dropdown-item" href="{{ route('admin.mission.edit', $missions->id) }}">
                                 <i class="dw dw-edit2"></i> Modifier
                             </a>
-                            <form action="{{ route('admin.mission.delete', $mission->id) }}" method="POST"
+                            <form action="{{ route('admin.mission.delete', $missions->id) }}" method="POST"
                                 onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette mission ?');">
                                 @csrf
                                 @method('DELETE')

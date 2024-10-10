@@ -55,8 +55,8 @@ class MissionController extends Controller
     // Afficher les détails d'une mission
     public function show($id)
     {
-        $mission = Mission::findOrFail($id);
-        return view('backend.pages.admin.mission.show', compact('mission'));
+        $missions = Mission::findOrFail($id);
+        return view('backend.pages.admin.mission.show', compact('missions'));
     }
 
     // Afficher le formulaire de modification d'une mission
@@ -64,8 +64,8 @@ class MissionController extends Controller
     {
         $clients = Client::all();
         $responsables = Responsable::all();
-        $mission = Mission::findOrFail($id);
-        return view('backend.pages.admin.mission.edit', compact('mission', 'clients', 'responsables'));
+        $missions = Mission::findOrFail($id);
+        return view('backend.pages.admin.mission.edit', compact('missions', 'clients', 'responsables'));
     }
 
 
@@ -73,7 +73,7 @@ class MissionController extends Controller
     public function update(Request $request, $id)
     {
 
-        $mission = Mission::findOrFail($id);
+        $missions = Mission::findOrFail($id);
 
         // Validation des données
         $request->validate([
@@ -88,19 +88,24 @@ class MissionController extends Controller
         ]);
 
         // Mise à jour de la mission
-        $mission->update($request->all());
+        $missions->update($request->all());
 
         return redirect()->route('admin.mission.index')->with('success', 'Mission mise à jour avec succès.');
     }
 
     // Supprimer une mission
-    public function destroy(Mission $mission)
+    public function destroy($id)
     {
-        try {
-            $mission->delete();
-            return redirect()->route('admin.mission.index')->with('success', 'Mission supprimée avec succès.');
-        } catch (\Exception $e) {
-            return redirect()->route('admin.mission.index')->with('error', 'Erreur lors de la suppression de la mission.');
+        // Trouver la mission par ID
+        $missions = Mission::findOrFail($id);
+
+        // Supprimer la mission
+        $deleted = $missions->delete();
+
+        if ($deleted) {
+            return redirect()->route('admin.mission.index')->with('success', 'Mission supprimé avec succès.');
+        } else {
+            return redirect()->route('admin.mission.index')->with('fail', 'Une erreur s\'est produite lors de la suppression.');
         }
     }
 }

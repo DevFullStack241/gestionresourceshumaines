@@ -89,9 +89,9 @@
                         ><span class="mtext">Postes</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des postes</a></li>
+                        <li><a href="{{ route('admin.poste.index') }}">Liste des postes</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter un poste</a>
+                            <a href="{{ route('admin.poste.create') }}">Ajouter un poste</a>
                         </li>
 
                     </ul>
@@ -102,9 +102,9 @@
                         ><span class="mtext">Affectations</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des affectations</a></li>
+                        <li><a href="{{ route('admin.affectation.index') }}">Liste des affectations</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter une affectation</a>
+                            <a href="{{ route('admin.affectation.create') }}">Ajouter une affectation</a>
                         </li>
 
                     </ul>
@@ -115,9 +115,9 @@
                         ><span class="mtext">Quart de travail</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des quarts de travail</a></li>
+                        <li><a href="{{ route('admin.quarttravail.index') }}">Liste des quarts de travail</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter un quart de travail</a>
+                            <a href="{{ route('admin.quarttravail.create') }}">Ajouter un quart de travail</a>
                         </li>
 
                     </ul>
@@ -128,9 +128,9 @@
                         ><span class="mtext">Disponibilitées</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des disponibilitées</a></li>
+                        <li><a href="{{ route('admin.disponibilite.index') }}">Liste des disponibilitées</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter une disponibilitée</a>
+                            <a href="{{ route('admin.disponibilite.create') }}">Ajouter une disponibilitée</a>
                         </li>
 
                     </ul>

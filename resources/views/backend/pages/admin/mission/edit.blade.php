@@ -18,7 +18,7 @@
 </div>
 
 <div class="pd-20 card-box mb-30">
-    <form action="{{ route('admin.mission.update', $mission->id) }}" method="POST">
+    <form action="{{ route('admin.mission.update', $missions->id) }}" method="POST">
         @csrf
         @method('PUT') <!-- Méthode PUT pour l'édition -->
 
@@ -28,7 +28,7 @@
             <div class="col-sm-12 col-md-10">
                 <select name="client_id" class="form-control">
                     @foreach($clients as $client)
-                        <option value="{{ $client->id }}" {{ $mission->client_id == $client->id ? 'selected' : '' }}>
+                        <option value="{{ $client->id }}" {{ $missions->client_id == $client->id ? 'selected' : '' }}>
                             {{ $client->company_name }}
                         </option>
                     @endforeach
@@ -42,7 +42,7 @@
             <div class="col-sm-12 col-md-10">
                 <select name="responsable_id" class="form-control">
                     @foreach($responsables as $responsable)
-                        <option value="{{ $responsable->id }}" {{ $mission->responsable_id == $responsable->id ? 'selected' : '' }}>
+                        <option value="{{ $responsable->id }}" {{ $missions->responsable_id == $responsable->id ? 'selected' : '' }}>
                             {{ $responsable->name }}
                         </option>
                     @endforeach
@@ -54,7 +54,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Titre de la mission</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" name="title" value="{{ old('title', $mission->title) }}" placeholder="Saisir le titre de la mission">
+                <input class="form-control" type="text" name="title" value="{{ old('title', $missions->title) }}" placeholder="Saisir le titre de la mission">
                 @error('title')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -65,7 +65,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Description</label>
             <div class="col-sm-12 col-md-10">
-                <textarea class="form-control" name="description" placeholder="Saisir la description de la mission">{{ old('description', $mission->description) }}</textarea>
+                <textarea class="form-control" name="description" placeholder="Saisir la description de la mission">{{ old('description', $missions->description) }}</textarea>
                 @error('description')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -76,7 +76,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Lieu</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" name="location" value="{{ old('location', $mission->location) }}" placeholder="Saisir le lieu de la mission">
+                <input class="form-control" type="text" name="location" value="{{ old('location', $missions->location) }}" placeholder="Saisir le lieu de la mission">
                 @error('location')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -87,7 +87,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Date de début</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="datetime-local" name="start_date" value="{{ old('start_date', $mission->start_date ? \Carbon\Carbon::parse($mission->start_date)->format('Y-m-d\TH:i') : '') }}">
+                <input class="form-control" type="datetime-local" name="start_date" value="{{ old('start_date', $missions->start_date ? \Carbon\Carbon::parse($missions->start_date)->format('Y-m-d\TH:i') : '') }}">
                 @error('start_date')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -98,7 +98,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Date de fin</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="datetime-local" name="end_date" value="{{ old('end_date', $mission->end_date ? \Carbon\Carbon::parse($mission->end_date)->format('Y-m-d\TH:i') : '') }}">
+                <input class="form-control" type="datetime-local" name="end_date" value="{{ old('end_date', $missions->end_date ? \Carbon\Carbon::parse($missions->end_date)->format('Y-m-d\TH:i') : '') }}">
                 @error('end_date')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -110,9 +110,9 @@
             <label class="col-sm-12 col-md-2 col-form-label">Statut</label>
             <div class="col-sm-12 col-md-10">
                 <select name="status" class="form-control">
-                    <option value="upcoming" {{ $mission->status == 'upcoming' ? 'selected' : '' }}>À venir</option>
-                    <option value="in progress" {{ $mission->status == 'in progress' ? 'selected' : '' }}>En cours</option>
-                    <option value="completed" {{ $mission->status == 'completed' ? 'selected' : '' }}>Terminée</option>
+                    <option value="upcoming" {{ $missions->status == 'upcoming' ? 'selected' : '' }}>À venir</option>
+                    <option value="in progress" {{ $missions->status == 'in progress' ? 'selected' : '' }}>En cours</option>
+                    <option value="completed" {{ $missions->status == 'completed' ? 'selected' : '' }}>Terminée</option>
                 </select>
                 @error('status')
                     <span class="text-danger">{{ $message }}</span>

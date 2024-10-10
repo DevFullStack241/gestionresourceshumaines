@@ -40,8 +40,8 @@
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Client</label>
         <div class="col-sm-12 col-md-10">
-            @if ($mission->client)
-                <p>{{ $mission->client->company_name }}</p>
+            @if ($missions->client)
+                <p>{{ $missions->client->company_name }}</p>
             @else
                 <p>Client non assigné</p>
             @endif
@@ -52,8 +52,8 @@
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Responsable</label>
         <div class="col-sm-12 col-md-10">
-            @if ($mission->responsable)
-                <p>{{ $mission->responsable->name }}</p>
+            @if ($missions->responsable)
+                <p>{{ $missions->responsable->name }}</p>
             @else
                 <p>Responsable non assigné</p>
             @endif
@@ -64,56 +64,56 @@
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Titre de la mission</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ $mission->title }}</p>
+            <p>{{ $missions->title }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Description</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ $mission->description ? $mission->description : 'Aucune description' }}</p>
+            <p>{{ $missions->description ? $missions->description : 'Aucune description' }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Lieu</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ $mission->location ? $mission->location : 'Non spécifié' }}</p>
+            <p>{{ $missions->location ? $missions->location : 'Non spécifié' }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Date de début</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ \Carbon\Carbon::parse($mission->start_date)->format('d/m/Y H:i') }}</p>
+            <p>{{ \Carbon\Carbon::parse($missions->start_date)->format('d/m/Y H:i') }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Date de fin</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ \Carbon\Carbon::parse($mission->end_date)->format('d/m/Y H:i') }}</p>
+            <p>{{ \Carbon\Carbon::parse($missions->end_date)->format('d/m/Y H:i') }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Statut</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ ucfirst($mission->status) }}</p>
+            <p>{{ ucfirst($missions->status) }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Créé le</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ \Carbon\Carbon::parse($mission->created_at)->format('d/m/Y H:i') }}</p>
+            <p>{{ \Carbon\Carbon::parse($missions->created_at)->format('d/m/Y H:i') }}</p>
         </div>
     </div>
 
     <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Mis à jour le</label>
         <div class="col-sm-12 col-md-10">
-            <p>{{ \Carbon\Carbon::parse($mission->updated_at)->format('d/m/Y H:i') }}</p>
+            <p>{{ \Carbon\Carbon::parse($missions->updated_at)->format('d/m/Y H:i') }}</p>
         </div>
     </div>
 

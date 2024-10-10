@@ -32,13 +32,13 @@
             </a>
         </div>
     </div>
-    <form action="{{ route('admin.client.update', $client->id) }}" method="POST">
+    <form action="{{ route('admin.client.update', $clients->id) }}" method="POST">
         @csrf
         @method('PUT') <!-- Cela spécifie que la requête est de type PUT pour la mise à jour -->
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Nom de l'entreprise</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" name="company_name" placeholder="Saisir le nom de l'entreprise" value="{{ old('company_name', $client->company_name) }}">
+                <input class="form-control" type="text" name="company_name" placeholder="Saisir le nom de l'entreprise" value="{{ old('company_name', $clients->company_name) }}">
                 @error('company_name')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -48,7 +48,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Raison Social</label>
             <div class="col-sm-12 col-md-10">
-                <textarea class="form-control" name="legal_name">{{ old('legal_name', $client->legal_name) }}</textarea>
+                <textarea class="form-control" name="legal_name">{{ old('legal_name', $clients->legal_name) }}</textarea>
                 @error('legal_name')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -58,7 +58,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Email</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="email" placeholder="Saisir votre adresse email" type="email" value="{{ old('email', $client->email) }}">
+                <input class="form-control" name="email" placeholder="Saisir votre adresse email" type="email" value="{{ old('email', $clients->email) }}">
                 @error('email')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -68,7 +68,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Téléphone</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="phone" placeholder="Saisir votre numéro de téléphone" type="tel" value="{{ old('phone', $client->phone) }}">
+                <input class="form-control" name="phone" placeholder="Saisir votre numéro de téléphone" type="tel" value="{{ old('phone', $clients->phone) }}">
                 @error('phone')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -78,7 +78,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Adresse</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="address" type="text" placeholder="Saisir votre adresse" value="{{ old('address', $client->address) }}">
+                <input class="form-control" name="address" type="text" placeholder="Saisir votre adresse" value="{{ old('address', $clients->address) }}">
                 @error('address')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -88,7 +88,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Information Supplementaire</label>
             <div class="col-sm-12 col-md-10">
-                <textarea class="form-control" name="additional_information">{{ old('additional_information', $client->additional_information) }}</textarea>
+                <textarea class="form-control" name="additional_information">{{ old('additional_information', $clients->additional_information) }}</textarea>
                 @error('additional_information')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror

@@ -34,13 +34,13 @@
     </div>
     <br>
     <br>
-    <form action="{{ route('admin.responsable.update', $responsable->id) }}" method="POST">
+    <form action="{{ route('admin.responsable.update', $responsables->id) }}" method="POST">
         @csrf
         @method('PUT') <!-- Cela spécifie que la requête est de type PUT pour la mise à jour -->
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Nom et Prénom</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" placeholder="Saisir votre et prénom" name="name" value="{{ old('name', $responsable->name) }}">
+                <input class="form-control" type="text" placeholder="Saisir votre et prénom" name="name" value="{{ old('name', $responsables->name) }}">
                 @error('name')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -49,7 +49,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Nom d'utilisateur</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" type="text" placeholder="Saisir votre et prénom" name="username" value="{{ old('name', $responsable->username) }}">
+                <input class="form-control" type="text" placeholder="Saisir votre et prénom" name="username" value="{{ old('name', $responsables->username) }}">
                 @error('username')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -59,7 +59,7 @@
             <label class="col-sm-12 col-md-2 col-form-label">Email</label>
             <div class="col-sm-12 col-md-10">
                 <input class="form-control" placeholder="Saisir votre adresse email" name="email" type="email"
-                    value="{{ old('email', $responsable->email) }}">
+                    value="{{ old('email', $responsables->email) }}">
                 @error('email')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -68,7 +68,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Téléphone</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="phone" placeholder="Saisir votre numéro de téléphone" type="tel" value="{{ old('phone', $responsable->phone) }}">
+                <input class="form-control" name="phone" placeholder="Saisir votre numéro de téléphone" type="tel" value="{{ old('phone', $responsables->phone) }}">
                 @error('phone')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
@@ -77,7 +77,7 @@
         <div class="form-group row">
             <label class="col-sm-12 col-md-2 col-form-label">Adresse</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="address" type="text" placeholder="Saisir votre adresse" value="{{ old('address', $responsable->address) }}">
+                <input class="form-control" name="address" type="text" placeholder="Saisir votre adresse" value="{{ old('address', $responsables->address) }}">
                 @error('address')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror

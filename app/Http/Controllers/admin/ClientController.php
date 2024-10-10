@@ -54,8 +54,8 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        $client = Client::findOrFail($id);
-        return view('backend.pages.admin.client.show', compact('client'));
+        $clients = Client::findOrFail($id);
+        return view('backend.pages.admin.client.show', compact('clients'));
     }
 
     /**
@@ -63,8 +63,8 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $client = Client::findOrFail($id);
-        return view('backend.pages.admin.client.edit', compact('client'));
+        $clients = Client::findOrFail($id);
+        return view('backend.pages.admin.client.edit', compact('clients'));
     }
 
 
@@ -73,20 +73,20 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $client = Client::findOrFail($id);
+        $clients = Client::findOrFail($id);
 
         // Validation des champs avec une règle d'unicité pour l'email qui ignore l'email actuel
         $request->validate([
             'company_name' => 'required|string|max:255',
             'legal_name' => 'nullable|string|max:255',
-            'email' => 'required|email|unique:clients,email,' . $client->id, // Ignore l'email du client actuel
+            'email' => 'required|email|unique:clients,email,' . $clients->id, // Ignore l'email du client actuel
             'phone' => 'nullable|string|max:20',
             'address' => 'nullable|string|max:255',
             'additional_information' => 'nullable|string',
         ]);
 
         // Mise à jour des données du client
-        $client->update($request->all());
+        $clients->update($request->all());
 
         return redirect()->route('admin.client.index')->with('success', 'Client mis à jour avec succès.');
     }
@@ -95,14 +95,18 @@ class ClientController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Client $client)
+    public function destroy($id)
     {
-        try {
-            $client->delete(); // Suppression du client
+        // Trouver le client par ID
+        $clients = Client::findOrFail($id);
+
+        // Supprimer le client
+        $deleted = $clients->delete();
+
+        if ($deleted) {
             return redirect()->route('admin.client.index')->with('success', 'Client supprimé avec succès.');
-        } catch (\Exception $e) {
-            // En cas d'erreur lors de la suppression
-            return redirect()->route('admin.client.index')->with('error', 'Une erreur est survenue lors de la suppression du client.');
+        } else {
+            return redirect()->route('admin.client.index')->with('fail', 'Une erreur s\'est produite lors de la suppression.');
         }
     }
 }

@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="title">
-                <h4>Liste des clients</h4>
+                <h4>Liste des affectations</h4>
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
@@ -25,44 +25,44 @@
                         <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Liste des clients
+                        Liste des affectations
                     </li>
                 </ol>
             </nav>
         </div>
     </div>
 </div>
+
 <div class="pd-20 card-box mb-30">
     <div class="clearfix mb-20">
         <div class="pull-left">
-            <a href="{{ route('admin.client.create') }}" class="btn btn-primary" role="button">
-                <i class="micon dw dw-apartment"></i> Ajouter un client
+            <a href="{{ route('admin.affectation.create') }}" class="btn btn-primary" role="button">
+                <i class="micon dw dw-apartment"></i> Ajouter une affectation
             </a>
         </div>
     </div>
+
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Nom de l'entreprise</th>
-                <th scope="col">Raison Social</th>
-                <th scope="col">Email</th>
-                <th scope="col">Téléphone</th>
-                <th scope="col">Adresse</th>
-                <th scope="col">Information Supplementaire</th>
+                <th scope="col">Mission</th>
+                <th scope="col">Agent</th>
+                <th scope="col">Poste</th>
+                <th scope="col">Date d'affectation</th>
+                <th scope="col">Statut</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($clients as $clients)
+            @foreach ($affectations as $affectation)
             <tr>
-                <th scope="row">{{ $clients->id }}</th>
-                <td>{{ $clients->company_name }}</td>
-                <td style="text-align: justify;">{{ $clients->legal_name }}</td>
-                <td>{{ $clients->email }}</td>
-                <td>{{ $clients->phone }}</td>
-                <td>{{ $clients->address }}</td>
-                <td style="text-align: justify;">{{ $clients->additional_information }}</td>
+                <th scope="row">{{ $affectation->id }}</th>
+                <td>{{ $affectation->mission->title }}</td>
+                <td>{{ $affectation->agent->name }}</td>
+                <td>{{ $affectation->poste->position_name }}</td>
+                <td>{{ $affectation->assignment_date }}</td>
+                <td>{{ ucfirst($affectation->status) }}</td>
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
@@ -70,17 +70,18 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="{{ route('admin.client.show', $clients->id) }}"><i
-                                    class="dw dw-eye"></i> View</a>
-                            <a class="dropdown-item" href="{{ route('admin.client.edit', $clients->id) }}"><i
-                                    class="dw dw-edit2"></i> Edit</a>
-
-                            <form action="{{ route('admin.client.delete', $clients->id) }}" method="POST"
-                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
+                            <a class="dropdown-item" href="{{ route('admin.affectation.show', $affectation->id) }}">
+                                <i class="dw dw-eye"></i> Voir
+                            </a>
+                            <a class="dropdown-item" href="{{ route('admin.affectation.edit', $affectation->id) }}">
+                                <i class="dw dw-edit2"></i> Modifier
+                            </a>
+                            <form action="{{ route('admin.affectation.delete', $affectation->id) }}" method="POST"
+                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette affectation ?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="dropdown-item" style="border: none; background: none;">
-                                    <i class="dw dw-delete-3"></i> Delete
+                                    <i class="dw dw-delete-3"></i> Supprimer
                                 </button>
                             </form>
                         </div>

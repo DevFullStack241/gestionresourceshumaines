@@ -25,7 +25,7 @@
                         <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
-                        Liste des clients
+                        Liste des postes
                     </li>
                 </ol>
             </nav>
@@ -35,8 +35,8 @@
 <div class="pd-20 card-box mb-30">
     <div class="clearfix mb-20">
         <div class="pull-left">
-            <a href="{{ route('admin.client.create') }}" class="btn btn-primary" role="button">
-                <i class="micon dw dw-apartment"></i> Ajouter un client
+            <a href="{{ route('admin.poste.create') }}" class="btn btn-primary" role="button">
+                <i class="micon dw dw-apartment"></i> Ajouter un poste
             </a>
         </div>
     </div>
@@ -44,25 +44,21 @@
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Nom de l'entreprise</th>
-                <th scope="col">Raison Social</th>
-                <th scope="col">Email</th>
-                <th scope="col">Téléphone</th>
-                <th scope="col">Adresse</th>
+                <th scope="col">Nom du poste</th>
+                <th scope="col">Quota horaire</th>
+                <th scope="col">Competences requises</th>
                 <th scope="col">Information Supplementaire</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($clients as $clients)
+            @foreach ($postes as $postes)
             <tr>
-                <th scope="row">{{ $clients->id }}</th>
-                <td>{{ $clients->company_name }}</td>
-                <td style="text-align: justify;">{{ $clients->legal_name }}</td>
-                <td>{{ $clients->email }}</td>
-                <td>{{ $clients->phone }}</td>
-                <td>{{ $clients->address }}</td>
-                <td style="text-align: justify;">{{ $clients->additional_information }}</td>
+                <th scope="row">{{ $postes->id }}</th>
+                <td>{{ $postes->position_name }}</td>
+                <td>{{ $postes->hourly_quota }}</td>
+                <td style="text-align: justify;">{{ $postes->required_skills }}</td>
+                <td style="text-align: justify;">{{ $postes->additional_information }}</td>
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
@@ -70,13 +66,13 @@
                             <i class="dw dw-more"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                            <a class="dropdown-item" href="{{ route('admin.client.show', $clients->id) }}"><i
+                            <a class="dropdown-item" href="{{ route('admin.poste.show', $postes->id) }}"><i
                                     class="dw dw-eye"></i> View</a>
-                            <a class="dropdown-item" href="{{ route('admin.client.edit', $clients->id) }}"><i
+                            <a class="dropdown-item" href="{{ route('admin.poste.edit', $postes->id) }}"><i
                                     class="dw dw-edit2"></i> Edit</a>
 
-                            <form action="{{ route('admin.client.delete', $clients->id) }}" method="POST"
-                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce client ?');">
+                            <form action="{{ route('admin.poste.delete', $postes->id) }}" method="POST"
+                                onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce poste ?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="dropdown-item" style="border: none; background: none;">
