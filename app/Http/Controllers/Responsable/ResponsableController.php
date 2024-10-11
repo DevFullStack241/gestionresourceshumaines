@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\DB;
 use constGuards;
 use constDefaults;
 use Illuminate\Support\Facades\File;
-use Mberecall\Kropify\Kropify;
-
+use SawaStacks\Utils\Library\Kropify;
 
 class ResponsableController extends Controller
 {

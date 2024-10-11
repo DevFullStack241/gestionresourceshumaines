@@ -26,8 +26,8 @@
 
 @endsection
 @push('scripts')
-    <script>
-        $('input[type="file"][id="responsableProfilePictureFile"]').Kropify({s
+<script>
+    $('input[type="file"][id="responsableProfilePictureFile"]').Kropify({
             preview:'#responsableProfilePicture',
             viewMode:1,
             aspectRatio:1,
@@ -50,5 +50,6 @@
                 console.log(text);
             },
         });
-    </script>
+</script>
 @endpush
+
