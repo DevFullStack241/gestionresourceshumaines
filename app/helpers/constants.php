@@ -3,7 +3,7 @@
 class constGuards
 {
     const ADMIN = 'admin';
-    const CLIENT = 'client';
+    const AGENT = 'agent';
     const RESPONSABLE = 'responsable';
 }
 

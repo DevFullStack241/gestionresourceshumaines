@@ -29,6 +29,10 @@ class RedirectIfAuthenticated
                 if ($guard === 'responsable') {
                     return redirect()->route('responsable.home');
                 }
+
+                if ($guard === 'agent') {
+                    return redirect()->route('agent.home');
+                }
             }
         }
         return $next($request);

@@ -11,7 +11,7 @@
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item">
-                        <a href="{{ route('responsable.home') }}">Home</a>
+                        <a href="{{ route('agent.home') }}">Home</a>
                     </li>
                     <li class="breadcrumb-item active" aria-current="page">
                         Profile
@@ -22,26 +22,26 @@
     </div>
 </div>
 
-@livewire('responsable.responsable-profile')
+@livewire('agent.agent-profile')
 
 @endsection
 @push('scripts')
 <script>
-    $('input[type="file"][id="responsableProfilePictureFile"]').Kropify({
-            preview:'#responsableProfilePicture',
+    $('input[type="file"][id="agentProfilePictureFile"]').Kropify({
+            preview:'#agentProfilePicture',
             viewMode:1,
             aspectRatio:1,
             cancelButtonText:'Cancel',
             resetButtonText:'Reset',
             cropButtonText:'Crop & update',
-            processURL:'{{ route("responsable.change-profile-picture") }}',
+            processURL:'{{ route("agent.change-profile-picture") }}',
             maxSize:2097152,
             showLoader:true,
             success:function(data){
                 if( data.status == 1 ){
                     toastr.success(data.msg);
                     Livewire.dispatch('updateAdminResponsableAgentHeaderInfo');
-                    Livewire.dispatch('updateResponsableProfilePage');
+                    Livewire.dispatch('updateAgentProfilePage');
                 }else{
                     toastr.error(data.msg);
                 }

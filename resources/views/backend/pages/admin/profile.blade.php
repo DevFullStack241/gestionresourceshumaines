@@ -61,7 +61,7 @@
             processUrl:'{{ route("admin.change-profile-picture") }}',
             withCSRF:['_token','{{ csrf_token() }}'],
             onSuccess:function(message, element, status){
-            Livewire.dispatch('updateAdminResponsableHeaderInfo');
+            Livewire.dispatch('updateAdminResponsableAgentHeaderInfo');
                 toastr.success(message);
             } ,
             onError:function(message, element, status){

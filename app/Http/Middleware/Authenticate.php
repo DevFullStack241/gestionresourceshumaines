@@ -24,6 +24,11 @@ class Authenticate extends Middleware
                 return route('responsable.login');
             }
 
+            if ($request->routeIs('agent.*')) {
+                session()->flash('fail', 'Vous devez d\'abord vous connecter');
+                return route('agent.login');
+            }
+
             // Retour par défaut pour les autres utilisateurs
             return route('login'); // Assure-toi d'avoir une route de connexion par défaut
         }

@@ -4,17 +4,19 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Admin;
+use App\Models\Agent;
 use App\Models\Responsable;
 use Illuminate\Support\Facades\Auth;
 
-class AdminResponsableHeaderProfileInfo extends Component
+class AdminResponsableAgentHeaderProfileInfo extends Component
 {
 
     public $admin;
     public $responsable;
+    public $agent;
 
     public $listeners = [
-        'updateAdminResponsableHeaderInfo'=>'$refresh'
+        'updateAdminResponsableAgentHeaderInfo'=>'$refresh'
     ];
 
     public function mount(){
@@ -24,10 +26,13 @@ class AdminResponsableHeaderProfileInfo extends Component
         if( Auth::guard('responsable')->check() ){
             $this->responsable = Responsable::findOrFail(auth()->id());
         }
+        if( Auth::guard('agent')->check() ){
+            $this->agent = Agent::findOrFail(auth()->id());
+        }
     }
 
     public function render()
     {
-        return view('livewire.admin-responsable-header-profile-info');
+        return view('livewire.admin-responsable-agent-header-profile-info');
     }
 }

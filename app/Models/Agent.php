@@ -51,7 +51,17 @@ class Agent extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed',
     ];
+
+
+    public function getPictureAttribute($value){
+        if( $value ){
+            return asset('/images/users/agents/'.$value);
+        }else{
+            return asset('/images/users/default-avatar.png');
+        }
+    }
 
     //relattion
 
