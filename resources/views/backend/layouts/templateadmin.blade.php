@@ -20,6 +20,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/admin.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/icon-font.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/admin1.css') }}" />
+    <link rel="stylesheet" href="{{ asset('personnification.css') }}" />
+
 
     <link
 			rel="stylesheet"
@@ -29,6 +31,40 @@
 
     <link rel="stylesheet" href="{{ asset('extra-assets/ijabo/ijabo.min.css') }}">
     <link rel="stylesheet" href="{{ asset('extra-assets/ijaboCropTool/ijaboCropTool.min.css') }}">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
+    ></script>
+    <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+        crossorigin="anonymous"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-GBZ3SGGX85");
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+    </script>
+    <!-- End Google Tag Manager -->
 
     @livewireStyles
     @stack('stylesheet')
@@ -62,10 +98,6 @@
         <div class="pd-ltr-20 xs-pd-20-10">
             <div class="min-height-200px">
                 @yield('content')
-                {{-- <div class="footer-wrap pd-20 mb-20 card-box">
-                DeskApp - Bootstrap 4 Admin Template By
-                <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
-            </div> --}}
             </div>
         </div>
     </div>
@@ -76,6 +108,8 @@
     <script src="{{ asset('assets/vendors/scripts/script.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/scripts/process.js') }}"></script>
     <script src="{{ asset('assets/vendors/scripts/layout-settings.js') }}"></script>
+    <script src="{{ asset('assets/src/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+	<script src="{{ asset('assets/vendors/scripts/calendar-setting.js') }}"></script>
     <script>
         if( navigator.userAgent.indexOf("Firefox") != -1 ){
             history.pushState(null, null, document.URL);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Calendar;
 use Illuminate\Http\Request;
 
 class CalendarController extends Controller
@@ -12,7 +13,9 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        //
+         // Récupérer tous les responsables
+        return view('backend.pages.admin.calendar.index');
+
     }
 
     /**

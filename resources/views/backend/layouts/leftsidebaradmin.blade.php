@@ -39,7 +39,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('admin.calendar.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span
                         ><span class="mtext">Calendar</span>
                     </a>
