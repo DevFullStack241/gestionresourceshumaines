@@ -4,11 +4,11 @@
 	<head>
 		<!-- Basic Page Info -->
 		<meta charset="utf-8" />
-		<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+		<title>DeskApp</title>
 
 		<!-- Site favicon -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        
+
 		<link
 			rel="apple-touch-icon"
 			sizes="180x180"

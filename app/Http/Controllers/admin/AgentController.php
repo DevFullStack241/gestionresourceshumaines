@@ -119,7 +119,7 @@ class AgentController extends Controller
             'email' => 'required|email|unique:agents,email,' . $id, // Ignorer l'email actuel
             'phone' => 'nullable|string|max:20',
             'address' => 'nullable|string|max:255',
-            'register_number' => 'nullable|string|max:255',
+            'registration_number' => 'nullable|string|max:255',
         ]);
 
         // Trouver le agent par ID
@@ -131,7 +131,7 @@ class AgentController extends Controller
         $agents->email = $request->email;
         $agents->phone = $request->phone;
         $agents->address = $request->address;
-        $agents->register_number = $request->register_number;
+        $agents->registration_number = $request->registration_number;
 
         // Enregistrer les modifications
         $saved = $agents->save();

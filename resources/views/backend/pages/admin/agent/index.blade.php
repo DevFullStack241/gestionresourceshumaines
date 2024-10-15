@@ -50,7 +50,9 @@
                 <th scope="col">Mot de passe</th>
                 <th scope="col">Adresse</th>
                 <th scope="col">Téléphone</th>
+                <th scope="col">Matricule</th>
                 <th scope="col">Statut</th>
+                <th scope="col">Disponibilité</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -64,7 +66,9 @@
                 <td>{{ $agents->password }}</td>
                 <td>{{ $agents->address }}</td>
                 <td>{{ $agents->phone }}</td>
+                <td>{{ $agents->registration_number }}</td>
                 <td>{{ $agents->status }}</td>
+                <td>{{ $agents->disponibilite }}</td>
                 <td>
                     <div class="dropdown">
                         <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"

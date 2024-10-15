@@ -66,19 +66,10 @@
             </div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-12 col-md-2 col-form-label">Téléphone</label>
+            <label class="col-sm-12 col-md-2 col-form-label">Matricule</label>
             <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="phone" placeholder="Saisir votre numéro de téléphone" type="tel" value="{{ old('phone', $agents->phone) }}">
-                @error('phone')
-                <span class="text-danger ml-2">{{ $message }}</span>
-                @enderror
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-12 col-md-2 col-form-label">Adresse</label>
-            <div class="col-sm-12 col-md-10">
-                <input class="form-control" name="address" type="text" placeholder="Saisir votre adresse" value="{{ old('address', $agents->address) }}">
-                @error('address')
+                <input class="form-control" name="registration_number" type="text" placeholder="Saisir votre matricule" value="{{ old('registration_number', $agents->registration_number) }}">
+                @error('registration_number')
                 <span class="text-danger ml-2">{{ $message }}</span>
                 @enderror
             </div>

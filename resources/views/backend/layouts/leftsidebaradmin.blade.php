@@ -27,7 +27,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon fa fa-group"></span
+                        <span class="micon fa fa-user"></span
                         ><span class="mtext">Responsables</span>
                     </a>
                     <ul class="submenu">
@@ -46,7 +46,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
+                        <span class="micon fa fa-group"></span
                         ><span class="mtext">Agents</span>
                     </a>
                     <ul class="submenu">
@@ -72,7 +72,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
+                        <span class="micon fa fa-handshake-o"></span
                         ><span class="mtext">Missions</span>
                     </a>
                     <ul class="submenu">
@@ -85,7 +85,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
+                        <span class="micon fa fa-id-badge"></span
                         ><span class="mtext">Postes</span>
                     </a>
                     <ul class="submenu">
@@ -98,8 +98,8 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
-                        ><span class="mtext">Affectations</span>
+                        <span class="micon fa fa-tasks" aria-hidden="true"></span>
+                        <span class="mtext">Affectations</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="{{ route('admin.affectation.index') }}">Liste des affectations</a></li>
@@ -111,7 +111,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon bi bi-textarea-resize"></span
+                        <span class="micon fa fa-pie-chart"></span
                         ><span class="mtext">Quart de travail</span>
                     </a>
                     <ul class="submenu">

@@ -28,7 +28,7 @@ class Agent extends Authenticatable
         'address',
         'phone',
         'statut',
-        'register_number',
+        'registration_number',
         'disponibilite',
         'email_verified_at',
 

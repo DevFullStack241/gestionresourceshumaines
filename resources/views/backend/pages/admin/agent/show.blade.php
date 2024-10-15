@@ -70,6 +70,13 @@
     </div>
 
     <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Matricule:</label>
+        <div class="col-sm-12 col-md-10">
+            <p class="form-control-static">{{ $agents->registration_number }}</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
         <label class="col-sm-12 col-md-2 col-form-label">Adresse:</label>
         <div class="col-sm-12 col-md-10">
             <p class="form-control-static">{{ $agents->address }}</p>
@@ -80,6 +87,13 @@
         <label class="col-sm-12 col-md-2 col-form-label">Statut:</label>
         <div class="col-sm-12 col-md-10">
             <p class="form-control-static">{{ $agents->status }}</p>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-sm-12 col-md-2 col-form-label">Disponibilité:</label>
+        <div class="col-sm-12 col-md-10">
+            <p class="form-control-static">{{ $agents->disponibilite }}</p>
         </div>
     </div>
 
