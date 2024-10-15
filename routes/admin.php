@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AffectationController;
+use App\Http\Controllers\admin\AgentController;
 use App\Http\Controllers\admin\CalendarController;
 use App\Http\Controllers\admin\DisponibiliteController;
 use App\Http\Controllers\admin\PosteController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\admin\ResponsableController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\admin\ClientController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\MissionController;
 use App\Http\Controllers\admin\QuartTravailController;
 
@@ -36,6 +38,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::prefix('responsable')->name('responsable.')->group(function () {
 
             Route::controller(ResponsableController::class)->group(function () {
+                Route::get('/index', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{id}', 'show')->name('show');
+                Route::get('/edit/{id}', 'edit')->name('edit');
+                Route::put('/update/{id}', 'update')->name('update');
+                Route::delete('/delete/{id}', 'destroy')->name('delete');
+                Route::get('/verify/{token}', 'verify')->name('verify');
+            });
+        });
+
+
+        //RESPONSABLES ROUTES
+        Route::prefix('agent')->name('agent.')->group(function () {
+
+            Route::controller(AgentController::class)->group(function () {
                 Route::get('/index', 'index')->name('index');
                 Route::get('/create', 'create')->name('create');
                 Route::post('/store', 'store')->name('store');
@@ -139,6 +157,13 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
             Route::controller(CalendarController::class)->group(function () {
                 Route::get('/index', 'index')->name('index');
+            });
+        });
+
+        Route::prefix('dashboard')->name('dashboard.')->group(function () {
+
+            Route::controller(DashboardController::class)->group(function () {
+                Route::get('/dashboard', 'dashboard')->name('dashboard');
             });
         });
 

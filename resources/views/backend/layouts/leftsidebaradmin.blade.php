@@ -50,9 +50,9 @@
                         ><span class="mtext">Agents</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="form-basic.html">Liste des agents</a></li>
+                        <li><a href="{{ route('admin.agent.index') }}">Liste des agents</a></li>
                         <li>
-                            <a href="advanced-components.html">Ajouter un agent</a>
+                            <a href="{{ route('admin.agent.create') }}">Ajouter un agent</a>
                         </li>
 
                     </ul>

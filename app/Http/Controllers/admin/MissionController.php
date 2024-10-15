@@ -17,6 +17,7 @@ class MissionController extends Controller
     public function index()
     {
         $missions = Mission::with('client', 'responsable')->get();
+        $missions = Mission::withCount('affectations')->get();
         return view('backend.pages.admin.mission.index', compact('missions'));
     }
 

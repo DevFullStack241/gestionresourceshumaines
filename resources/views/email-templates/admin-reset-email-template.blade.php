@@ -1,20 +1,20 @@
-<p>Dear {{ $admin->name }}</p>
+<p>Cher {{ $admin->name }}</p>
 <br>
 <p>
-    Your password on Laravecom system was changed successfully.
-    Here is your new login credentials:
+    Votre mot de passe sur le système DeskApp a ete modifie avec succès.
+Voici vos nouveaux identifiants de connexion:
     <br>
-    <b>Login ID: </b>{{ $admin->username }} or {{ $admin->email }}
+    <b>ID Connexion: </b>{{ $admin->username }} or {{ $admin->email }}
     <br>
-    <b>Password: </b>{{ $new_password }}
+    <b>Mot de passe: </b>{{ $new_password }}
 </p>
 <br>
-Please, keep your credentials confidential. Your username and password are your own credentials and you should never share them with anybody else.
+Veuillez garder vos identifiants confidentiels. Votre nom d'utilisateur et votre mot de passe sont vos propres identifiants et vous ne devez jamais les partager avec quelqu'un d'autre..
 <p>
-    Laravecom will not be liable for any misuse of your username or password.
+    DeskApp ne sera pas responsable de toute mauvaise utilisation de votre nom d'utilisateur ou de votre mot de passe.
 </p>
 <br>
 ----------------------------------------------
 <p>
-    This email was automatically sent by Laravecom system. Do not reply it.
+    Cet email a ete envoye automatiquement par le système DeskApp. Ne repondez pas.
 </p>

@@ -1,21 +1,21 @@
 Dear <b>{{ $agent->name }}</b><br>
 <p>
-    You are receiving this email because you requested to reset your password on {{ get_settings()->site_name }}
+    Vous recevez cet e-mail car vous avez demande a réinitialiser votre mot de passe sur {{ get_settings()->site_name }}
 </p>
 <p>
-    Please, use the link below to reset it.
+    Veuillez utiliser le lien ci-dessous pour le réinitialiser.
     <a href="{{ $actionLink }}" target="_blank">{{ $actionLink }}</a><br>
 </p>
 <p>
-    This password reset link is only valid for the next 15 minutes.
+    Ce lien de réinitialisation du mot de passe n'est valable que pour les 15 prochaines minutes.
 </p>
 <p>
-    If you are having trouble with the link above, copy and paste it into your web browser.
+    Si vous rencontrez des problemes avec le lien ci-dessus, copiez-le et collez-le dans votre navigateur Web.
 </p>
 <p>
-    NB: IF YOU DID NOT REQUEST A PASSWORD REST, PLEASE IGNORE THIS EMAIL
+    NB: SI VOUS N'AVEZ PAS DEMANDe DE REMPLACEMENT DE MOT DE PASSE, VEUILLEZ IGNORER CET E-MAIL
 </p><br>
 ----------------------------------------------
 <p>
-    This e-mail was automaticaly sent by {{ get_settings()->site_name }}. Don't reply to it.
+    Cet email a ete envoye automatiquement par {{ get_settings()->site_name }}. Ne reponds pas a ça.
 </p>

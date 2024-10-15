@@ -1,19 +1,19 @@
-<p>Dear {{ $responsable->name }}</p><br>
+<p>Cher {{ $responsable->name }}</p><br>
 <p>
-    Your password on {{ get_settings()->site_name }} has been changed successfully. Here are your new login credentials:
+    Votre mot de passe sur {{ get_settings()->site_name }} a ete modifie avec succes. Voici vos nouveaux identifiants de connexion:
     <br>
-    <b>Login ID: </b>{{ isset($responsable->username) ? $responsable->username.' or ' : '' }} {{ $responsable->email }}
+    <b>ID de connexion: </b>{{ isset($responsable->username) ? $responsable->username.' or ' : '' }} {{ $responsable->email }}
     <br>
-    <b>Password: </b>{{ $new_password }}
+    <b>Mot de passe: </b>{{ $new_password }}
 </p>
 <br>
-Please, Keep your creadentials confidential. Your Login ID and Password are your own creadentials and you should never share them with anybody else.
+Veuillez garder vos identifiants confidentiels. Votre identifiant de connexion et votre mot de passe sont vos propres identifiants et vous ne devez jamais les partager avec quelqu'un d'autre.
 
 <p>
-    {{ get_settings()->site_name }} will not be liable for any misuse of your login id or password.
+    {{ get_settings()->site_name }} ne sera pas responsable de toute mauvaise utilisation de votre identifiant de connexion ou de votre mot de passe.
 </p>
 <br>
 ---------------------------------------
 <p>
-    This email was automatically sent by {{ get_settings()->site_name }}. Do not reply to it.
+    Cet email a ete envoye automatiquement par {{ get_settings()->site_name }}. Ne réponds pas à ça.
 </p>

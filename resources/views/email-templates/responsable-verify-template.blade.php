@@ -1,6 +1,6 @@
 <p>Dear {{ $responsable_name }}</p>
 <p>
-    We are received this email to verify Laravel Seller account associated with {{ $responsable_email }} <br>
-    You can verify your account by clicking on below link: <br>
-    <a href="{{ $action_link }}">Verify Account</a>
+    Nous avons reçu cet e-mail pour vérifier le compte agent DeskApp associe a {{ $responsable_email }} <br>
+    Vous pouvez verifier votre compte en cliquant sur le lien ci-dessous: <br>
+    <a href="{{ $action_link }}">Verifier le compte</a>
 </p>

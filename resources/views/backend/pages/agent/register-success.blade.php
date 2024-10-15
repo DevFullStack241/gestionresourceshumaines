@@ -36,7 +36,7 @@
 <body>
     <div class="reg-success">
         <span>&check;</span>
-        <p>We sent you an activation link. Check your email and click on the link to verify your account.</p>
+        <p>Nous vous avons envoye un lien d'activation. Verifiez votre e-mail et cliquez sur le lien pour verifier votre compte.</p>
     </div>
 </body>
 </html>
