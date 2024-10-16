@@ -342,4 +342,44 @@ class AgentController extends Controller
             return response()->json(['status' => 0, 'msg' => 'Quelque chose s\'est mal passé.']);
         }
     }
+
+
+    //Partie mobile
+    public function inscription(Request $request)
+{
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Agent::class],
+        'username' => ['required', 'string'],
+        'password' => ['required','min:8'],
+    ]);
+    $userData = [
+        'name' => $request->name,
+        'email' => $request->email,
+        'username' => $request->username,
+        // Hachage du mot de passe avant affectation
+        'password' => Hash::make($request->password),
+    ];
+
+    $agent = Agent::create($userData);
+    $token = $agent->createToken('auth_token')->plainTextToken;
+    return response()->json(['status' => 1, 'access_token' => $token, 'token_type' => 'Bearer', 'message' => 'Agent enregistré avec succès.']);
 }
+public function connexion(Request $request){
+    $request->validate([
+        'email' => ['required', 'string', 'lowercase', 'email'],
+        'password' => ['required','min:8'],
+    ]);
+
+    $agent = Agent::where('email', $request->email)->first();
+    if (!$agent || !Hash::check($request->password, $agent->password)) {
+        return response()->json(['status' => 0, 'message' => 'Email ou mot de passe incorrect.']);
+    } else {
+        $token = $agent->createToken('auth_token')->plainTextToken;
+        return response()->json(['status' => 1, 'access_token' => $token, 'token_type' => 'Bearer', 'message' => 'Agent connecté avec succès.']);
+    }
+}
+}
+
+
+

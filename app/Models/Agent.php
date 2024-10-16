@@ -31,7 +31,6 @@ class Agent extends Authenticatable
         'registration_number',
         'disponibilite',
         'email_verified_at',
-
     ];
 
     /**
