@@ -126,7 +126,7 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="">Confirmer le nouveau mot de passe</label>
+                                                    <label for="">Confirmer nouveau mot de passe</label>
                                                     <input type="password" class="form-control"
                                                         placeholder="Retapez le nouveau mot de passe"
                                                         wire:model='new_password_confirmation'>

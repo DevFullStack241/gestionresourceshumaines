@@ -20,7 +20,7 @@
 
 
                 <li class="dropdown">
-                    <a href="{{ route('admin.dashboard') }}" class="dropdown-toggle no-arrow {{ Route::is('admin.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('responsable.home') }}" class="dropdown-toggle no-arrow {{ Route::is('responsable.home') ? 'active' : '' }}">
                         <span class="micon fa fa-home"></span
                         ><span class="mtext">Dashboard</span>
                     </a>
@@ -31,15 +31,15 @@
                         ><span class="mtext">Responsables</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.responsable.index') }}">Liste des responsables</a></li>
+                        <li><a href="{{ route('responsable.besponsable.index') }}">Liste des responsables</a></li>
                         <li>
-                            <a href="{{ route('admin.responsable.create') }}">Ajouter un responsable</a>
+                            <a href="{{ route('responsable.besponsable.create') }}">Ajouter un responsable</a>
                         </li>
                         @endif
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('admin.calendar.index') }}" class="dropdown-toggle no-arrow">
+                    <a href="{{ route('responsable.calendar.index') }}" class="dropdown-toggle no-arrow">
                         <span class="micon bi bi-calendar4-week"></span
                         ><span class="mtext">Calendar</span>
                     </a>
@@ -50,9 +50,9 @@
                         ><span class="mtext">Agents</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.agent.index') }}">Liste des agents</a></li>
+                        <li><a href="{{ route('responsable.agent.index') }}">Liste des agents</a></li>
                         <li>
-                            <a href="{{ route('admin.agent.create') }}">Ajouter un agent</a>
+                            <a href="{{ route('responsable.agent.create') }}">Ajouter un agent</a>
                         </li>
 
                     </ul>
@@ -63,9 +63,9 @@
                         ><span class="mtext">Clients</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.client.index') }}">Liste des clients</a></li>
+                        <li><a href="{{ route('responsable.client.index') }}">Liste des clients</a></li>
                         <li>
-                            <a href="{{ route('admin.client.create') }}">Ajouter un client</a>
+                            <a href="{{ route('responsable.client.create') }}">Ajouter un client</a>
                         </li>
 
                     </ul>
@@ -76,9 +76,9 @@
                         ><span class="mtext">Missions</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.mission.index') }}">Liste des missions</a></li>
+                        <li><a href="{{ route('responsable.mission.index') }}">Liste des missions</a></li>
                         <li>
-                            <a href="{{ route('admin.mission.create') }}">Ajouter une mission</a>
+                            <a href="{{ route('responsable.mission.create') }}">Ajouter une mission</a>
                         </li>
 
                     </ul>
@@ -89,9 +89,9 @@
                         ><span class="mtext">Postes</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.poste.index') }}">Liste des postes</a></li>
+                        <li><a href="{{ route('responsable.poste.index') }}">Liste des postes</a></li>
                         <li>
-                            <a href="{{ route('admin.poste.create') }}">Ajouter un poste</a>
+                            <a href="{{ route('responsable.poste.create') }}">Ajouter un poste</a>
                         </li>
 
                     </ul>
@@ -102,9 +102,9 @@
                         <span class="mtext">Affectations</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.affectation.index') }}">Liste des affectations</a></li>
+                        <li><a href="{{ route('responsable.affectation.index') }}">Liste des affectations</a></li>
                         <li>
-                            <a href="{{ route('admin.affectation.create') }}">Ajouter une affectation</a>
+                            <a href="{{ route('responsable.affectation.create') }}">Ajouter une affectation</a>
                         </li>
 
                     </ul>
@@ -115,9 +115,9 @@
                         ><span class="mtext">Quart de travail</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.quarttravail.index') }}">Liste des quarts de travail</a></li>
+                        <li><a href="{{ route('responsable.quarttravail.index') }}">Liste des quarts de travail</a></li>
                         <li>
-                            <a href="{{ route('admin.quarttravail.create') }}">Ajouter un quart de travail</a>
+                            <a href="{{ route('responsable.quarttravail.create') }}">Ajouter un quart de travail</a>
                         </li>
 
                     </ul>
@@ -128,9 +128,9 @@
                         ><span class="mtext">Disponibilitées</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{ route('admin.disponibilite.index') }}">Liste des disponibilitées</a></li>
+                        <li><a href="{{ route('responsable.disponibilite.index') }}">Liste des disponibilitées</a></li>
                         <li>
-                            <a href="{{ route('admin.disponibilite.create') }}">Ajouter une disponibilitée</a>
+                            <a href="{{ route('responsable.disponibilite.create') }}">Ajouter une disponibilitée</a>
                         </li>
 
                     </ul>
