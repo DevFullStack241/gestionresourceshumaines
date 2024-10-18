@@ -27,7 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 
     Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function () {
-        Route::view('/dashboard', 'backend.pages.admin.dashboard')->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/logout_handler', [AdminController::class, 'logoutHandler'])->name('logout_handler');
         Route::get('/profile', [AdminController::class, 'profileView'])->name('profile');
         Route::post('/change-profile-picture', [AdminController::class, 'changeProfilePicture'])->name('change-profile-picture');
@@ -157,13 +157,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
             Route::controller(CalendarController::class)->group(function () {
                 Route::get('/index', 'index')->name('index');
-            });
-        });
-
-        Route::prefix('dashboard')->name('dashboard.')->group(function () {
-
-            Route::controller(DashboardController::class)->group(function () {
-                Route::get('/dashboard', 'dashboard')->name('dashboard');
             });
         });
 

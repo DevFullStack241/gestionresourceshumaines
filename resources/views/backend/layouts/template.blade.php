@@ -33,6 +33,7 @@
 
 
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/styles/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('personnification12.css') }}" />
 
 
     @kropifyStyles

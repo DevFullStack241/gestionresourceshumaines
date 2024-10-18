@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\responsable\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Responsable\ResponsableController;
 use App\Http\Controllers\responsable\ClientController;
@@ -36,7 +37,7 @@ Route::prefix('responsable')->name('responsable.')->group(function () {
     Route::middleware(['auth:responsable', 'PreventBackHistory'])->group(function () {
 
         Route::controller(ResponsableController::class)->group(function () {
-            Route::get('/home', 'home')->name('home');
+            Route::get('/home', [HomeController::class, 'index'])->name('home');
             Route::post('/logout', 'logoutHandler')->name('logout');
             Route::get('/profile','profileView')->name('profile');
             Route::post('/change-profile-picture','changeProfilePicture')->name('change-profile-picture');
@@ -168,11 +169,6 @@ Route::prefix('responsable')->name('responsable.')->group(function () {
             });
         });
 
-        Route::prefix('dashboard')->name('dashboard.')->group(function () {
 
-            Route::controller(DashboardController::class)->group(function () {
-                Route::get('/dashboard', 'dashboard')->name('dashboard');
-            });
-        });
     });
 });
